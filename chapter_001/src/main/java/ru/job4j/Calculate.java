@@ -1,7 +1,14 @@
 package ru.job4j;
 
+/*
+ Package for calculate task.
+ @author Aleksandr Vasyanin (stockon@yandex.ru)
+ @version $Id$
+ @since 12.04/2018
+*/
+
 public class Calculate {
-public static void main (String [] args){
+public static void main (String [] args) {
 	System.out.println("Hello world");
 }
 }
