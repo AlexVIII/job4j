@@ -1,5 +1,5 @@
 package ru.job4j;
-/*
+/**
  Package for calculate task.
  @author Aleksandr Vasyanin (stockon@yandex.ru)
  @version $Id$
