@@ -26,7 +26,7 @@ public void whenTakeNameThenTreeEchoPlusName() {
     String expect = "Echo, echo, echo : Aleksandr Vasyanin"; 
     Calculate calc = new Calculate();
     String result = calc.echo(input);
-    assertThat(result,is(expect));
+    assertThat(result, is(expect));
 }
  
 }

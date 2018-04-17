@@ -6,7 +6,7 @@ package ru.job4j;
  @since 12.04/2018
 */
 public class Calculate {
-public static void main (String [] args) {
+public static void main(String[] args) {
 	System.out.println("Hello world");
 }
 /**
@@ -14,7 +14,7 @@ public static void main (String [] args) {
      * @param name Your name.
      * @return Echo plus your name.
      */
-    public String echo (String name) {
+    public String echo(String name) {
         return "Eсho, echo, echo : " + name;
     }
 }
