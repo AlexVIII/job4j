@@ -15,6 +15,6 @@ public static void main(String[] args) {
      * @return Echo plus your name.
      */
     public String echo(String name) {
-        return "Eсho, echo, echo : " + name;
+        return "Echo, echo, echo : " + name;
     }
 }
