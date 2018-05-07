@@ -7,7 +7,7 @@ public class Converter{
     /**
      * Конвертируем рубли в евро.
      * @param value рубли.
-     * @return Евро.
+     * @return Евро
      */
 
     int euro=70, dol=60;
