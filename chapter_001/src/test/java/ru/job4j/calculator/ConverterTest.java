@@ -8,6 +8,7 @@ import static org.junit.Assert.assertThat;
 
 public class ConverterTest {
 
+
       @Test
     public void when60RubleToDollarThen1() {
         Converter converter = new Converter();
