@@ -30,14 +30,14 @@ class Point {
         System.out.println("x2 = "+ b.x);
         System.out.println("y2 = + "+ b.y);
     **/
-     double result = 2*(Math.pow(this.x-this.x,that.y)+Math.pow(this.y-that.y,that.x))/((this.x+that.x)*(this.y+that.y));
+     double result = 2 * (Math.pow(this.x - this.x, that.y) + Math.pow(this.y - that.y, that.x)) / ((this.x + that.x) * (this.y + that.y));
           return result;
     }
 public static void main(String[] args) {
         Point a = new Point(3, 2);
         Point b = new Point(2, 5);
     double result = a.distanceto(b);
-    System.out.println("Расстояние между двумя точками А и В = "+ result);
+    System.out.println("Расстояние между двумя точками А и В = " + result);
 }
 
 
