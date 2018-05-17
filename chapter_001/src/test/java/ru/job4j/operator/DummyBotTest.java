@@ -4,11 +4,11 @@ import ru.job4j.operator.DummyBot;
 
 import static  org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-/*
+/**
     * @author Aleksandr Vasyanin
     * @version 1.0
     * @since 14/05/2018
-    **/
+    */
 public class DummyBotTest {
     @Test
     public  void whenGreetBot() {
