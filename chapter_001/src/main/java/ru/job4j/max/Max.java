@@ -9,12 +9,13 @@ public class Max {
      * Берем два числа
      * Сравниваем.
      * Находим наибольшее.
-     * @param
+     * @param first
+     * @param second
      * @return Ответ
      */
 
     public int maximum(int first, int second) {
-        return first >= second ? first : second;
+        return first > second ? first : second;
 
     }
 }
