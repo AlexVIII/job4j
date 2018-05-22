@@ -1,5 +1,6 @@
 package ru.job4j.condition;
 
+
 public class Triangle {
     private Point a;
     private Point b;
@@ -11,7 +12,26 @@ public class Triangle {
         this.c = c;
     }
 
-    /**
+    public static void main(String[] args) {
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        Point c = new Point(2, 0);
+        double ab = a.distanceto(b);
+        double bc = b.distanceto(c);
+        double ac = a.distanceto(c);
+
+
+
+    }
+
+    public double period(double ab, double ac, double bc) {
+
+        return (ab + ac + bc) / 2;
+    }
+}
+
+
+    /*
      * Метод вычисления полупериметра по длинам сторон.
      * <p>
      * Формула.
@@ -23,19 +43,47 @@ public class Triangle {
      * @param bc расстояние между точками b c
      * @return Периметh.
      */
-    public double period(double ab, double ac, double bc) {
-        return a.distanceto(b) + a.distanceto(c) + b.distanceto(c);
-            }
-    public double area() {
+
+
+   /* public double period(double ab, double ac, double bc) {
+        return (ab+ac+bc)/2;
+    }
+
+    /**
+     * Метод должен вычислить площадь треугольника.
+     *
+     * @return Вернуть прощадь, если треугольник существует или -1, если треугольника нет.
+     */
+
+   /* public double area() {
         double rsl = -1;
         double ab = this.a.distanceTo(this.b);
         double ac = this.a.distanceTo(this.c);
         double bc = this.b.distanceTo(this.c);
-        double p = this.period(ab, ac, bc);
-        if (this.exist(ab, ac, bc)) {
+     double p = this.period(ab, ac, bc);
+       if (this.exist(ab, ac, bc)) {
             // написать формулу для расчета площади треугольника.
             //rsl = ...
+            rsl=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        //else if ()
+
         }
         return rsl;
     }
+
+
+    /**
+     * Метод проверяет можно ли построить треугольник с такими длинами сторон.
+     *
+     * Подумайте какое надо написать условие, чтобы определить можно ли построить треугольник.
+     *
+     * @param ab Длина от точки a b.
+     * @param ac Длина от точки a c.
+     * @param bc Длина от точки b c.
+     * @return
+     */
+ /*   private boolean exist(double ab, double ac, double bc) {
+        return false;
+    }
 }
+*/
