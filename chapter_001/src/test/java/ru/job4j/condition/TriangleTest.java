@@ -22,4 +22,3 @@ public class TriangleTest {
         assertThat(result, closeTo(expected, 0.1));
     }
 }
-*/
