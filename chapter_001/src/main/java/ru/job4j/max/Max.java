@@ -3,6 +3,7 @@ package ru.job4j.max;
     * @author Aleksandr Vasyanin
     * @version 1.0
     * @since 14/05/2018
+    * hi
      **/
 public class Max {
     /**
