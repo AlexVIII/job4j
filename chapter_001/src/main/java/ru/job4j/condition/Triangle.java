@@ -35,13 +35,13 @@ public class Triangle {
      */
     public double area() {
         double rsl = -1;
-        double ab = this.a.distanceTo(this.b);
-        double ac = this.a.distanceTo(this.c);
-        double bc = this.b.distanceTo(this.c);
+        double ab = this.a.distanceto(this.b);
+        double ac = this.a.distanceto(this.c);
+        double bc = this.b.distanceto(this.c);
         double p = this.period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
             // написать формулу для расчета площади треугольника.
-            rsl = Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
+            rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;
     }
@@ -56,9 +56,7 @@ public class Triangle {
      * @return
      */
     private boolean exist(double ab, double ac, double bc) {
-        if (ab<(bc+ac)|| bc<(ab+ac)|| ac<(ab+bc)) {
-            return true;
-        }
-        return false;
+        return (ab < (bc + ac) && bc < (ab + ac) && ac < (ab + bc)) ? true : false;
     }
 }
+
