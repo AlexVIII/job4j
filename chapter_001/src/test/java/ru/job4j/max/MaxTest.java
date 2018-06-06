@@ -9,8 +9,8 @@ public class MaxTest {
     @Test
     public void whenFirstLessSecond() {
         Max maks = new Max();
-        int result = maks.maximum(3, 1, 2);
-        assertThat(result, is(3));
+        int result = maks.maxim(3, 1, 8);
+        assertThat(result, is(8));
     }
 
 }
