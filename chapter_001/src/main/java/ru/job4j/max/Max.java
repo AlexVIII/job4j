@@ -7,6 +7,7 @@ import static java.lang.Double.max;
     * @version 1.0
     * @since 14/05/2018
     **/
+
 public class Max {
     /**
      * Берем два числа
@@ -17,13 +18,11 @@ public class Max {
      * @param third
      * @return Ответ
      */
-555
 
 
-    public  maxim (int first, int second, int third) {
 
-        return double temp = max( first , max(second, third));
-
-
+    public double maxim (int first, int second, int third) {
+        double temp = max(first, second);
+        return max(temp, third);
+        }
 }
-
