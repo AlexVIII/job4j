@@ -17,7 +17,7 @@ public class Max {
      * @param third
      * @return Ответ
      */
-55
+555
 
 
     public  maxim (int first, int second, int third) {
