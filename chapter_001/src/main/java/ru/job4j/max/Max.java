@@ -20,9 +20,8 @@ public class Max {
      */
 
 
-
     public double maxim (int first, int second, int third) {
         double temp = max(first, second);
         return max(temp, third);
-        }
+    }
 }
