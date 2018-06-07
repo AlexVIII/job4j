@@ -8,9 +8,9 @@ public class TriangleTest {
     @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
         // создаем три объекта класса Point.
-        Point a = new Point(0, 0);
-        Point b = new Point(0, 2);
-        Point c = new Point(2, 0);
+        Point a = new Point(10, 11);
+        Point b = new Point(5, 4);
+        Point c = new Point(20, 10);
 
         // Создаем объект треугольник и передаем в него объекты точек.
         Triangle triangle = new Triangle(a, b, c);
