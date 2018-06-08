@@ -26,7 +26,7 @@ public class Triangle {
 
 
     public double period(double ab, double ac, double bc) {
-        return (ab+bc+ac)/2;
+        return (ab + bc + ac) / 2;
     }
     /**
      * Метод должен вычислить площадь треугольника.
