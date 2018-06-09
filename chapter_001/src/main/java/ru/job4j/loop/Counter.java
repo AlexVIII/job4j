@@ -14,10 +14,10 @@ public class Counter {
      * @param finish
      * @return Ответ
      */
-    public int summa(int start, int finish){
+    public int summa(int start, int finish) {
         int temp = 0;
-        for (int a=start; a<=finish; a++){
-         if (a % 2 == 0){
+        for (int a = start;  a <= finish; a++) {
+         if (a % 2 == 0) {
              temp = temp + a;
          }
         }
