@@ -7,6 +7,7 @@ import java.util.function.BiPredicate;
  * @since 12.06.2018
  */
 
+
 public class Paint {
     public String rightTrl(int height) {
         return this.loopBy(

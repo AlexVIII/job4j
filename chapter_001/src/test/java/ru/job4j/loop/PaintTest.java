@@ -5,6 +5,7 @@ import java.util.StringJoiner;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
+
 /**
  * @author Petr Arsentev (mailto:parsentev@yandex.ru)
  * @version $Id$
