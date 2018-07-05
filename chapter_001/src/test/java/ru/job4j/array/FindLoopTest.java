@@ -23,4 +23,5 @@ public class FindLoopTest {
         int expect = -1;
         assertThat(result, is(expect));
     }
+
 }
