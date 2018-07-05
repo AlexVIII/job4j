@@ -14,4 +14,13 @@ public class FindLoopTest {
         int expect = 0;
         assertThat(result, is(expect));
     }
+    @Test
+    public void whenArrayHasNot5Then() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {4, 10, 3};
+        int value = 5;
+        int result = find.indexOf(input, value);
+        int expect = 0;
+        assertThat(result, is(expect));
+    }
 }
