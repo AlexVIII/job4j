@@ -12,15 +12,4 @@ public class Turn {
         }
         return data;
     }
-    public int[]  turn1(int[] data ) {
-        int temp =0;
-        for (int index = 0; index < data.length-3; index++) {
-
-            temp = data[index];
-            data[index] = data[data.length-index-1];
-            data[data.length-index-1]= temp;
-
-        }
-        return data;
-    }
 }
