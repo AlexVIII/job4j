@@ -3,19 +3,20 @@ package ru.job4j.array;
 public class Check {
     public boolean mono(boolean[] data) {
         boolean result = false;
-        int n = 0, m = 0;
+        int x = 0, y = 0;
         for (int i = 0; i < data.length-1; i++) {
-            m = m + 1;
-            if (data[i] == true ){
-                n = n + 1;
+            if (data[i] = true ){
+                x = x + i ;
             }
-
+            if (data[i] = false ){
+                y = y +i;
+            }
         }
-        if ( n == m ){
+        if ( x - data.length == 1 ){
             result = true;
         }
-        if ( n != m ){
-            result = false;
+        if (  y - data.length == 1){
+            result = true;
         }
         return result;
     }
