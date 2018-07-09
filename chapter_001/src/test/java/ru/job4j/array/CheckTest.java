@@ -27,5 +27,13 @@ public class CheckTest {
         boolean result = check.mono(input);
         assertThat(result, is(true));
     }
+    @Test
+    public void whenDataMonoByFalseThenTrue2() {
+        Check check = new Check();
+        boolean[] input = new boolean[] {false, false, false, true};
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
+    }
+
 
 }
