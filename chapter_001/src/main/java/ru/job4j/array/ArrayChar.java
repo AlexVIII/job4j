@@ -15,11 +15,5 @@ public class ArrayChar {
      * @param prefix префикс.
      * @return если слово начинаеться с префикса
      */
-    public boolean startWith(String prefix) {
-        boolean result = true;
-        char[] value = prefix.toCharArray();
-        // проверить. что массив data имеет первые элементы одинаковые с value
 
-        return result;
-    }
 }
