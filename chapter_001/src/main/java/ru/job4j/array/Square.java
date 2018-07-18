@@ -6,7 +6,7 @@ public class Square {
         // заполнить массив через цикл элементами от 1 до bound возведенными в квадрат
 
         for (int index = 0; index < bound; index++) {
-                   rst[index] = (index +1) * (index + 1) ;
+                   rst[index] = (index + 1) * (index + 1);
         }
         return rst;
 
@@ -16,7 +16,7 @@ public class Square {
         // заполнить массив через цикл элементами от 1 до bound возведенными в квадрат
 
         for (int index = 0; index < bound; index++) {
-            rst[index] = (index +2) * (index + 2) ;
+            rst[index] = (index + 2) * (index + 2);
         }
         return rst;
 
@@ -27,7 +27,7 @@ public class Square {
             int ix = 2;
         for (int index = 0; index < bound; index++) {
             rst[index] = (index + ix) * (index + ix);
-            ix = ix +1;
+            ix = ix + 1;
         }
         return rst;
 
