@@ -1,7 +1,5 @@
 package ru.job4j.max;
-
 import static java.lang.Double.max;
-
 /*
     * @author Aleksandr Vasyanin
     * @version 1.0
@@ -9,17 +7,6 @@ import static java.lang.Double.max;
     **/
 
 public class Max {
-    /**
-     * Берем два числа
-     * Сравниваем.
-     * Находим наибольшее.
-     * @param first
-     * @param second
-     * @param third
-     * @return Ответ
-     */
-
-
     public double maxim(int first, int second, int third) {
         double temp = max(first, second);
         return max(temp, third);

@@ -6,11 +6,6 @@ package ru.job4j.loop;
     **/
 
 public class Factorial {
-    /**
-     * Вычисляем сумму четных чисел
-     * @param n
-     * @return Ответ
-     */
     public int calc(int n) {
         int temp = 1;
         if (n > 1) {
@@ -20,5 +15,4 @@ public class Factorial {
         }
     return temp;
     }
-
 }

@@ -1,5 +1,4 @@
 package ru.job4j.loop;
-
 /*
     * @author Aleksandr Vasyanin
     * @version 1.0
@@ -7,13 +6,6 @@ package ru.job4j.loop;
     **/
 
 public class Counter {
-
-    /**
-     * Вычисляем сумму четных чисел
-     * @param start
-     * @param finish
-     * @return Ответ
-     */
     public int summa(int start, int finish) {
         int temp = 0;
         for (int a = start;  a <= finish; a++) {
@@ -23,5 +15,4 @@ public class Counter {
         }
         return temp;
    }
-
 }

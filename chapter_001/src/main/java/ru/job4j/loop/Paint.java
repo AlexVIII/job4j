@@ -6,8 +6,6 @@ import java.util.function.BiPredicate;
  * @version $Id$
  * @since 12.06.2018
  */
-
-
 public class Paint {
     public String rightTrl(int height) {
         return this.loopBy(

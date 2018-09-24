@@ -1,5 +1,4 @@
 package ru.job4j.array;
-
 public class Mass {
     public static void main(String[] args) {
         int size = 3;
@@ -16,11 +15,8 @@ public class Mass {
                         rez = false;
                         break;
                     }
-
                 }
             }
-
-
         }
         System.out.print(rez);
     }
