@@ -9,7 +9,7 @@ public class Item {
 
     public long create;
 
-    public String codeId;
+    private String codeId;
 
     public Item(String name, String description, String codeId, String id, long create) {
         this.name = name;
@@ -25,7 +25,7 @@ public class Item {
         public String getDescription(){
             return this.description;
         }
-        public String getCreate(){
+        public String getCreate() {
             return this.create;
         }
         public String getId() {
@@ -35,7 +35,6 @@ public class Item {
         public String setId() {
             this.id = id;
         }
-
 
 
 }

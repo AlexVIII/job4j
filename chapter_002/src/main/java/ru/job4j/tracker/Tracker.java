@@ -1,5 +1,5 @@
 package ru.job4j.tracker;
-import java.util.Random;
+import java.util.*;
 
  /**
  * @version $Id$
@@ -38,4 +38,70 @@ public class Tracker {
        //Реализовать метод генерации.
         return codeId;
     }
+
+     /** редактирование заявок
+      * @param id
+      * @param item
+      */
+    public void replace(String id, Item item) {
+
+        return ;
+     }
+
+     /**удаление заявок
+      *
+      * @param id
+      */
+     public void delete(String id) {
+        Item result = null;
+         for (Item item : items) {
+             if (item.getId().equals(id))
+                 result = item;
+                 break;
+         }
+         return result;
+     }
+System.arrayCopy()
+     /**получение списка всех заявок
+      *
+      * @return
+      */
+     public Item[] findAll() {
+         Item[] result = new Item[this.position];
+         for (int index = 0; index != this.position; index++) {
+             result[index] = this.items[index];
+         }
+         return items;
+     }
+
+     /**
+      * получение списка по имени
+      * @param key
+      * @return
+      */
+     public Item[] findByName(String key) {
+         Item result = null;
+         for (Item item : items) {
+             if (item.name.equals(key))
+                 result = item;
+                 return result;
+
+         }
+     }
+
+     /**получение заявки по id
+      *
+      * @param id
+      * @return
+      */
+     protected findById(String id) {
+        Item result = null;
+         for (Item item : items) {
+             if (item != null && item.getId().equals(id)) {
+                 result = item;
+                 break;
+             }
+         }
+         return result;
+     }
 }
