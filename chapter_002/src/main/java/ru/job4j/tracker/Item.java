@@ -22,20 +22,19 @@ public class Item {
     public String getName(){
             return this.name;
         }
-    public String getDescription(){
+        public String getDescription(){
             return this.description;
         }
-    public String getCreate(){
+        public String getCreate() {
             return this.create;
         }
-    public String getId() {
+        public String getId() {
             return this.id;
         }
 
-    public String setId() {
+        public String setId() {
             this.id = id;
         }
-
 
 
 }

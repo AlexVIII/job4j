@@ -1,5 +1,5 @@
 package ru.job4j.tracker;
-import java.util.Random;
+import java.util.*;
 
  /**
  * @version $Id$
@@ -38,15 +38,70 @@ public class Tracker {
        //Реализовать метод генерации.
         return codeId;
     }
-     public void replace(String id, Item item) {
-        for (i)
+
+     /** редактирование заявок
+      * @param id
+      * @param item
+      */
+    public void replace(String id, Item item) {
+
+        return ;
      }
 
+     /**удаление заявок
+      *
+      * @param id
+      */
+     public void delete(String id) {
+        Item result = null;
+         for (Item item : items) {
+             if (item.getId().equals(id))
+                 item = result;
+                 break;
+         }
+         return item;
+     }
+     //System.arrayCopy()
+     /**получение списка всех заявок
+      *
+      * @return
+      */
+     public Item[] findAll() {
+         Item[] result = new Item[this.position];
+         for (int index = 0; index != this.position; index++) {
+             result[index] = this.items[index];
+         }
+         return items;
+     }
+
+     /**
+      * получение списка по имени
+      * @param key
+      * @return
+      */
+     public Item[] findByName(String key) {
+         Item result = null;
+         for (Item item : items) {
+             if (item.name.equals(key))
+                 result = item;
+                 return result;
+
+         }
+     }
+
+     /**получение заявки по id
+      *
+      * @param id
+      * @return
+      */
+     protected findById(String id) {
+        Item result = null;
+         for (Item item : items) {
+             if (item != null && item.getId().equals(id)) {
+                 result = item;
+                 break;
+             }
+         }
+         return result;
+     }
 }
-
-
-Мето/* public void replace(String id, Item item) должен заменить ячейку в массиве this.items. Для этого необходимо найти ячейку в массиве по id
-        3. Метод public void delete(String id) должен удалить ячейку в массиве this.items. Для этого необходимо найти ячейку в массиве по id.  Далее сместить все значения справа от удаляемого элемента - на одну ячейку влево с помощью System.arrayCopy();
-        4. Метод public Item[] findAll() возвращает копию массива this.items без null элементов;
-        5. Метод public Item[] findByName(String key) проверяет в цикле все элементы массива this.items, сравнивая name (используя метод getName класса Item) с аргументом метода String key. Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его;
-        6. Метод public Item findById(String id) проверяет в цикле все элементы массива this.items, сравнивая id с аргументом String id и возвращает найденный Item. Если Item не найден - возвращает null.
