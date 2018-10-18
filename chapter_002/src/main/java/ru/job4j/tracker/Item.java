@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 public class Item {
+<<<<<<< HEAD
     private String id;
 
     private String name;
@@ -8,6 +9,15 @@ public class Item {
     private String description;
 
     private long create;
+=======
+    public String id;
+
+    public String name;
+
+    public String description;
+
+    public long create;
+>>>>>>> origin/master
 
     private String codeId;
 
@@ -19,7 +29,11 @@ public class Item {
         this.id = id;
     }
 
+<<<<<<< HEAD
     public String getName(){
+=======
+       public String getName(){
+>>>>>>> origin/master
             return this.name;
         }
         public String getDescription(){

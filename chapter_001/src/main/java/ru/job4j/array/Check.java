@@ -1,5 +1,4 @@
 package ru.job4j.array;
-
 public class Check {
     public boolean mono(boolean[] data) {
         boolean result = true;
@@ -8,7 +7,6 @@ public class Check {
                 result = false;
                 break;
             }
-
             }
         return result;
     }

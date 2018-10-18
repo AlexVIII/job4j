@@ -56,12 +56,12 @@ public class Tracker {
         Item result = null;
          for (Item item : items) {
              if (item.getId().equals(id))
-                 item = result;
+                 result = item;
                  break;
          }
-         return item;
+         return result;
      }
-     //System.arrayCopy()
+System.arrayCopy()
      /**получение списка всех заявок
       *
       * @return
