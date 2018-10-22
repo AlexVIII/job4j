@@ -44,34 +44,32 @@ public class Tracker {
       * @param item
       */
     public void replace(String id, Item item) {
+    for (Item item : items) {
+        if (item.getId().equals(id)){
+            item.name = "****"
+        }
+    }
+    return System.array(this.items);
 
-        return ;
-     }
 
      /**удаление заявок
       *
       * @param id
       */
      public void delete(String id) {
-        Item result = null;
          for (Item item : items) {
              if (item.getId().equals(id))
-                 result = item;
                  break;
-         }
-         return result;
-     }
-System.arrayCopy()
+             System.array(this.items,this.position);
+        }
+
+
      /**получение списка всех заявок
       *
       * @return
       */
      public Item[] findAll() {
-         Item[] result = new Item[this.position];
-         for (int index = 0; index != this.position; index++) {
-             result[index] = this.items[index];
-         }
-         return items;
+      return array.copyOf(this.items, this.position)
      }
 
      /**
@@ -80,12 +78,9 @@ System.arrayCopy()
       * @return
       */
      public Item[] findByName(String key) {
-         Item result = null;
          for (Item item : items) {
              if (item.name.equals(key))
-                 result = item;
-                 return result;
-
+                 return array.copy(this.items, this.position)
          }
      }
 
