@@ -104,7 +104,5 @@ System.arrayCopy()
          }
          return result;
 
-
-         hello
      }
 }
