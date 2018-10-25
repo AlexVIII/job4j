@@ -52,7 +52,7 @@ public class Tracker {
      public void delete(String id) {
         Item[] result = null;
          for (int index = 0; index != this.position; index++) {
-             if (items.this.generateId().equals(id))
+             if (items[this.id()].equals(id))
                  break;
          }
      }
@@ -77,7 +77,7 @@ public class Tracker {
      public Item[] findByName(String key) {
          Item[] result = null;
          for (int index = 0; index != this.position; index++) {
-             if (items[this.name].equals(key))
+             if (items[index].getName().equals(key))
                  result [index] = this.items[index];
                  break;
          }
@@ -90,10 +90,10 @@ public class Tracker {
       * @return
       */
      protected findById(String id) {
-        Item[] result = null;
+        Item result = null;
          for (int index = 0; index != this.position; index++) {
-             if (items[this.position].equals(id)) {
-                 result [index] = this.items[index];
+             if (items[index].getId().equals(id)) {
+                 result = items[index];
                  break;
              }
          }

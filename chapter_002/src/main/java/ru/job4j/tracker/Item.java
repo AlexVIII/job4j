@@ -4,15 +4,15 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 
 public class Item {
 
-    public String id;
+    private String id;
 
-    public String name;
+    private String name;
 
-    public String description;
+    private String description;
 
-    public long create;
+    private long create;
 
-   public String codeId;
+   private String codeId;
 
     public Item(String name, String description, String codeId, String id, long create) {
         this.name = name;
