@@ -50,10 +50,11 @@ public class Tracker {
       * @param id
       */
      public void delete(String id) {
-        Item[] result = null;
+        Item result = null;
          for (int index = 0; index != this.position; index++) {
-             if (items[this.id()].equals(id))
-                 break;
+             if (items[index].getId().equals(id)) {
+                 items[index] = result;
+             }
          }
      }
 
@@ -62,12 +63,19 @@ public class Tracker {
       * @return
       */
      public Item[] findAll() {
-         Item[] result = new Item[this.position];
-         for (int index = 0; index != this.position; index++) {
-             result[index] = this.items[index];
+         Item [] result = new Item[100];
+         int index =0;
+         for (int i = 0; i < this.position; i++ ) {
+             if (items[i] != null){
+                 result[i] = items[i];
+                 items[i] = null;
+                 index++;
+             }
+
          }
-         return items;
-     }
+         return Arrays.copyOf (result[], items[], index);
+
+
 
      /**
       * получение списка по имени
