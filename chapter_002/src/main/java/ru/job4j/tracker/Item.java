@@ -1,15 +1,9 @@
 package ru.job4j.tracker;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
 public class Item {
-<<<<<<< HEAD
-    private String id;
 
-    private String name;
-
-    private String description;
-
-    private long create;
-=======
     public String id;
 
     public String name;
@@ -17,9 +11,8 @@ public class Item {
     public String description;
 
     public long create;
->>>>>>> origin/master
 
-    private String codeId;
+   public String codeId;
 
     public Item(String name, String description, String codeId, String id, long create) {
         this.name = name;
@@ -29,11 +22,9 @@ public class Item {
         this.id = id;
     }
 
-<<<<<<< HEAD
-    public String getName(){
-=======
+
        public String getName(){
->>>>>>> origin/master
+
             return this.name;
         }
         public String getDescription(){

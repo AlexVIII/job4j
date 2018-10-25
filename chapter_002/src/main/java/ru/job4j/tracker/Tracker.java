@@ -11,7 +11,7 @@ public class Tracker {
      */
 
     private final Item[] items = new Item[100];
-
+    private static final  Random RN = new Random();
     /**
      * Указатель ячейки для новой заявки.
      */
@@ -21,6 +21,7 @@ public class Tracker {
      * @param item новая заявка
      */
     public Item add(Item item) {
+      //  item.setId(this.generateId());
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
@@ -32,11 +33,7 @@ public class Tracker {
      * @return Уникальный ключ.
      */
     private String generateId() {
-        String codeId;
-        Random random = new Random();
-        codeId = random.toString();
-       //Реализовать метод генерации.
-        return codeId;
+        return String.valueOf(RN.nextInt());
     }
 
      /** редактирование заявок
@@ -53,15 +50,13 @@ public class Tracker {
       * @param id
       */
      public void delete(String id) {
-        Item result = null;
-         for (Item item : items) {
-             if (item.getId().equals(id))
-                 result = item;
+        Item[] result = null;
+         for (int index = 0; index != this.position; index++) {
+             if (items.this.generateId().equals(id))
                  break;
          }
-         return result;
      }
-System.arrayCopy()
+
      /**получение списка всех заявок
       *
       * @return
@@ -80,13 +75,13 @@ System.arrayCopy()
       * @return
       */
      public Item[] findByName(String key) {
-         Item result = null;
-         for (Item item : items) {
-             if (item.name.equals(key))
-                 result = item;
-                 return result;
-
+         Item[] result = null;
+         for (int index = 0; index != this.position; index++) {
+             if (items[this.name].equals(key))
+                 result [index] = this.items[index];
+                 break;
          }
+         return result;
      }
 
      /**получение заявки по id
@@ -95,14 +90,13 @@ System.arrayCopy()
       * @return
       */
      protected findById(String id) {
-        Item result = null;
-         for (Item item : items) {
-             if (item != null && item.getId().equals(id)) {
-                 result = item;
+        Item[] result = null;
+         for (int index = 0; index != this.position; index++) {
+             if (items[this.position].equals(id)) {
+                 result [index] = this.items[index];
                  break;
              }
          }
          return result;
-         
      }
 }
