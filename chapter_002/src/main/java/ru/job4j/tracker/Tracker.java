@@ -6,51 +6,57 @@ import java.util.*;
  * @since 0.1
  */
 public class Tracker {
-    /**
-     * Массив для хранение заявок.
-     */
+     /**
+      * Массив для хранение заявок.
+      */
 
-    private final Item[] items = new Item[100];
-    private static final  Random RN = new Random();
-    /**
-     * Указатель ячейки для новой заявки.
-     */
-    private int position = 0;
-    /**
-     * Метод реализаущий добавление заявки в хранилище
-     * @param item новая заявка
-     */
-    public Item add(Item item) {
-      //  item.setId(this.generateId());
-        item.setId(this.generateId());
-        this.items[this.position++] = item;
-        return item;
-    }
+     private final Item[] items = new Item[100];
+     private static final Random RN = new Random();
+     /**
+      * Указатель ячейки для новой заявки.
+      */
+     private int position = 0;
 
-    /**
-     * Метод генерирует уникальный ключ для заявки.
-     * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
-     * @return Уникальный ключ.
-     */
-    private String generateId() {
-        return String.valueOf(RN.nextInt());
-    }
+     /**
+      * Метод реализаущий добавление заявки в хранилище
+      *
+      * @param item новая заявка
+      */
+     public Item add(Item item) {
+         //  item.setId(this.generateId());
+         item.setId(generateId());
+         this.items[this.position++] = item;
+         return item;
+     }
 
-     /** редактирование заявок
+     /**
+      * Метод генерирует уникальный ключ для заявки.
+      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+      *
+      * @return Уникальный ключ.
+      */
+     private String generateId() {
+         return String.valueOf(RN.nextInt());
+     }
+
+     /**
+      * редактирование заявок
+      *
       * @param id
       * @param item
       */
-    public void replace(String id, Item item) {
+     public void replace(String id, Item item) {
 
-        return ;
+         return;
      }
 
-     /**удаление заявок
+     /**
+      * удаление заявок
       *
       * @param id
       */
      public void delete(String id) {
-        Item result = null;
+         Item result = null;
          for (int index = 0; index != this.position; index++) {
              if (items[index].getId().equals(id)) {
                  items[index] = result;
@@ -58,30 +64,31 @@ public class Tracker {
          }
      }
 
-     /**получение списка всех заявок
+     /**
+      * получение списка всех заявок
       *
       * @return
       */
      public Item[] findAll() {
-         Item [] result = new Item[100];
-         int index =0;
-         for (int i = 0; i < this.position; i++ ) {
-             if (items[i] != null){
+         Item[] result = new Item[100];
+         int index = 0;
+         for (int i = 0; i < this.position; i++) {
+             if (items[i] != null) {
                  result[i] = items[i];
                  items[i] = null;
                  index++;
              }
 
          }
-         return Arrays.copyOf (result[], items[], index);
+         return Arrays.copyOf(items, index);
 
 
-
+/*
      /**
       * получение списка по имени
       * @param key
       * @return
-      */
+
      public Item[] findByName(String key) {
          Item[] result = null;
          for (int index = 0; index != this.position; index++) {
@@ -96,15 +103,18 @@ public class Tracker {
       *
       * @param id
       * @return
-      */
-     protected findById(String id) {
-        Item result = null;
-         for (int index = 0; index != this.position; index++) {
-             if (items[index].getId().equals(id)) {
-                 result = items[index];
-                 break;
-             }
-         }
-         return result;
+
+ //    protected findById(String id) {
+ //       Item result = null;
+  //       for (int index = 0; index != this.position; index++) {
+ //            if (items[index].getId().equals(id)) {
+ //                result = items[index];
+ //                break;
+//             }
+ //        }
+  //       return result;
      }
 }
+ */
+     }
+ }

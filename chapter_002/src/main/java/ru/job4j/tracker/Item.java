@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
 public class Item {
 
     private String id;
@@ -30,15 +28,16 @@ public class Item {
         public String getDescription(){
             return this.description;
         }
-        public String getCreate() {
-            return this.create;
-        }
+     //   public String getCreate() {
+      //      return this.create;
+      //  }
         public String getId() {
             return this.id;
         }
 
-        public String setId() {
-            this.id = id;
+        public String setId(String id) {
+            return this.id = id;
+
         }
 
 
