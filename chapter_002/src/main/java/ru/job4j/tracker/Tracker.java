@@ -39,82 +39,15 @@ public class Tracker {
          return String.valueOf(RN.nextInt());
      }
 
-     /**
-      * редактирование заявок
-      *
-      * @param id
-      * @param item
-      */
-     public void replace(String id, Item item) {
-
-         return;
-     }
-
-     /**
-      * удаление заявок
-      *
-      * @param id
-      */
-     public void delete(String id) {
-         Item result = null;
-         for (int index = 0; index != this.position; index++) {
-             if (items[index].getId().equals(id)) {
-                 items[index] = result;
-             }
-         }
-     }
-
-     /**
-      * получение списка всех заявок
-      *
-      * @return
-      */
-     public Item[] findAll() {
-         Item[] result = new Item[100];
-         int index = 0;
-         for (int i = 0; i < this.position; i++) {
-             if (items[i] != null) {
-                 result[i] = items[i];
-                 items[i] = null;
-                 index++;
-             }
-
-         }
-         return Arrays.copyOf(items, index);
-
-
-/*
-     /**
-      * получение списка по имени
-      * @param key
-      * @return
-
      public Item[] findByName(String key) {
          Item[] result = null;
          for (int index = 0; index != this.position; index++) {
              if (items[index].getName().equals(key))
                  result [index] = this.items[index];
-                 break;
+             break;
          }
          return result;
      }
 
-     /**получение заявки по id
-      *
-      * @param id
-      * @return
 
- //    protected findById(String id) {
- //       Item result = null;
-  //       for (int index = 0; index != this.position; index++) {
- //            if (items[index].getId().equals(id)) {
- //                result = items[index];
- //                break;
-//             }
- //        }
-  //       return result;
-     }
-}
- */
-     }
- }
+    }

@@ -8,29 +8,31 @@ public class Item {
 
     private String description;
 
-    private long create;
+     private long create;
+    private String codeId;
+    public Item(String name){
+  //  public Item(String name, String description, String codeId, String id, long create) {
 
-   private String codeId;
-
-    public Item(String name, String description, String codeId, String id, long create) {
         this.name = name;
         this.description = description;
         this.create = create;
         this.codeId = codeId;
+
         this.id = id;
     }
 
 
        public String getName(){
-
             return this.name;
         }
         public String getDescription(){
             return this.description;
         }
-     //   public String getCreate() {
-      //      return this.create;
+
+     /*   public String getCreate() {
+         return this.create;
       //  }
+      */
         public String getId() {
             return this.id;
         }
