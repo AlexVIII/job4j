@@ -8,11 +8,11 @@ import static org.junit.Assert.assertThat;
 public class TrackerTest {
 
     @Test
-    public void whenFindByName() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("test1");
-        tracker.add(item);
-        assertThat(tracker.findByName("test1"), is(item));
+    public void whenAddNewItem() {
+    Tracker tracker = new Tracker();
+    Item item = new Item("Test", "TestDescription", "123L");
+    tracker.add(item);
+    assertThat(tracker.findAll()[0],is(item));
     }
-
 }
+
