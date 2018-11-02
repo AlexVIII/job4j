@@ -47,6 +47,56 @@ public class Tracker {
         return Arrays.copyOf(this.items, this.position);
     }
 
+    /**редактирование заявок
+     *
+     * @param id
+     * @param item
+     */
+    public void replace(String id, Item item){
+
+    }
+
+    /**удаление заявок
+     *
+     * @param id
+     */
+    public void delete(String id){
+        for (int i = 0; i < this.position; i++) {
+            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+                System.arraycopy(this.items, i + 1, this.items, i, this.items.length - i - 1);
+                break;
+            }
+
+        }
+
+
+    }
+
+    /**получение списка всех заявок
+     *
+     * @return
+     */
+    public Item[] findAll(){
+
+    }
+
+    /**получение списка по имени
+     *
+     * @param key
+     * @return
+     */
+    public Item[] findByName(String key){
+
+    }
+
+    /**получение заявки по id
+     *
+      * @param id
+     * @return
+     */
+    public Item findById(String id){
+
+    }
 
 
 }
