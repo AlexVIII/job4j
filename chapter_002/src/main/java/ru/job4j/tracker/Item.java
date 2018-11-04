@@ -19,10 +19,10 @@ public class Item {
     }
 
 
-       public String getName(){
+       public String getName() {
             return this.name;
         }
-        public String getDescription(){
+        public String getDescription() {
             return this.description;
         }
 
@@ -35,7 +35,7 @@ public class Item {
         }
 
         public String setId(String id) {
-            return this.id = id;
+            return this.id;
 
         }
 

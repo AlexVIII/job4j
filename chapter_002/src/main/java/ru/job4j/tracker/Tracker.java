@@ -52,7 +52,7 @@ public class Tracker {
      * @param id
      * @param item
      */
-    public void replace(String id, Item item){
+    public void replace(String id, Item item) {
 
     }
 
@@ -60,24 +60,17 @@ public class Tracker {
      *
      * @param id
      */
-    public void delete(String id){
-        for (int i = 0; i < this.position; i++) {
-            if (this.items[i] != null && this.items[i].getId().equals(id)) {
-                System.arraycopy(this.items, i + 1, this.items, i, this.items.length - i - 1);
-                break;
-            }
-
-        }
-
-
+    public void delete(String id) {
+        return this.items.splice(id, 1)
     }
 
     /**получение списка всех заявок
      *
      * @return
      */
-    public Item[] findAll(){
+    public Item[] findAll() {
 
+        return Arrays.copyOf(this.items, this.position);
     }
 
     /**получение списка по имени
@@ -85,8 +78,16 @@ public class Tracker {
      * @param key
      * @return
      */
-    public Item[] findByName(String key){
+    public Item[] findByName(String key) {
+        Item result = null;
+        for (int i = 0; i < this.position; this.position++) {
+            if (this.items[i] != null && this.items.getName().equals(key)) {
+                result = this.items[i];
+                break;
+            }
 
+        }
+        return result;
     }
 
     /**получение заявки по id
@@ -94,7 +95,7 @@ public class Tracker {
       * @param id
      * @return
      */
-    public Item findById(String id){
+    public Item findById(String id) {
 
     }
 
