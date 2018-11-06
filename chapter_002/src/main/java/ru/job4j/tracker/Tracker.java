@@ -16,10 +16,11 @@ public class Tracker {
     /**
      * Указатель ячейки для новой заявки.
      */
-    private int position;
+    private int position = 0;
 
     /**
      * Метод реализаущий добавление заявки в хранилище
+     *
      * @param item новая заявка
      */
     public Item add(Item item) {
@@ -31,6 +32,7 @@ public class Tracker {
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     *
      * @return Уникальный ключ.
      */
     private String generateId() {
@@ -40,6 +42,7 @@ public class Tracker {
 
     /**
      * Метод выводит массив без нулевых значений
+     *
      * @return
      */
 
@@ -47,7 +50,8 @@ public class Tracker {
         return Arrays.copyOf(this.items, this.position);
     }
 
-    /**редактирование заявок
+    /**
+     * редактирование заявок
      *
      * @param id
      * @param item
@@ -56,48 +60,54 @@ public class Tracker {
 
     }
 
-    /**удаление заявок
+    /**
+     * удаление заявок
      *
      * @param id
      */
     public void delete(String id) {
-        return this.items.splice(id, 1)
+        for (int i = 0; i < this.position; i++) {
+            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+                this.items[i] = null;
+                break;
+            }
+        }
     }
 
-    /**получение списка всех заявок
-     *
-     * @return
-     */
-    public Item[] findAll() {
 
-        return Arrays.copyOf(this.items, this.position);
-    }
-
-    /**получение списка по имени
+    /**
+     * получение списка по имени
      *
      * @param key
      * @return
      */
-    public Item[] findByName(String key) {
-        Item result = null;
-        for (int i = 0; i < this.position; this.position++) {
-            if (this.items[i] != null && this.items.getName().equals(key)) {
-                result = this.items[i];
-                break;
-            }
 
+    public Item[] findByName(String key) {
+        Item[] found = new Item[this.position];
+        int counter = 0;
+        for (int i = 0; i < this.items.length; i++) {
+            if (this.items[i] != null && this.items[i].getName().equals(key)) {
+                found[counter++] = this.items[i];
+            }
         }
-        return result;
+        return Arrays.copyOf(found, counter);
     }
 
-    /**получение заявки по id
+    /**
+     * получение заявки по id
      *
-      * @param id
+     * @param id
      * @return
      */
     public Item findById(String id) {
-
+        Item result = null;
+        for (int i = 0; i < this.position; i++) {
+            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+                result = this.items[i];
+                break;
+            }
+        }
+        return result;
     }
-
 
 }
