@@ -27,6 +27,7 @@ public class TrackerTest {
         assertThat(tracker.findById(id), is(item1));
     }
 
+
    @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
