@@ -12,7 +12,6 @@ public class Tracker {
      * Массив для хранение заявок.
      */
     private final Item[] items = new Item[100];
-
     /**
      * Указатель ячейки для новой заявки.
      */
@@ -51,32 +50,38 @@ public class Tracker {
     }
 
     /**
-     * редактирование заявок
-     *
-     * @param id
-     * @param item
-     */
+    * редактирование заявок
+    *
+    * @param id
+    * @param item
+    */
     public void replace(String id, Item item) {
-        String id = item.setId();
-
         for (int i = 0; i < this.position; i++){
-            if (this.items[i] != null && this.items[i].getId().equals(id));
-                this.items[i].setId(id);
+           if (this.items[i] != null && this.items[i].getId().equals(id));
+                this.items[i].setId(generateId())
                 this.items[]
 }
 
-    }
-
+ //   }
+//
     /**
      * удаление заявок
      *
      * @param id
      */
     public void delete(String id) {
+        Item[] buffer = new Item[this.position];
         for (int i = 0; i < this.position; i++) {
             if (this.items[i] != null && this.items[i].getId().equals(id)) {
-                this.items[i] = null;
+                System.arraycopy( items, i + 1 , buffer, i, this.position - i);
                 position--;
+                break;
+            }
+        }
+        for (int j = 0; j < this.position -1; j++) {
+            if (this.items[j] != null && this.items[j].getId().equals(id)) {
+                System.arraycopy( buffer, j , items, j, this.position - j);
+                break;
             }
         }
     }

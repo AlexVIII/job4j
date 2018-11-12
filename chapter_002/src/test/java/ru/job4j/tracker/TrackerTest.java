@@ -36,7 +36,7 @@ public class TrackerTest {
         Item fresh = new Item("TestNew", "TestDescriptionNew", "123lnew");
         fresh.setId(old.getId());
         tracker.replace(old.getId(),fresh);
-        assertThat(tracker.findById(fresh.getId()), is("1231"))
+        assertThat(tracker.findById(fresh.getId()), is("1231"));
 
     }
 
@@ -69,7 +69,7 @@ public class TrackerTest {
         items[0] = item1;
         items[1] = item2;
         items[2] = item3;
-        tracker.delete("123456L");
+        tracker.delete("12345L");
         assertThat(tracker.findAll().length, is(2));
     }
 }
