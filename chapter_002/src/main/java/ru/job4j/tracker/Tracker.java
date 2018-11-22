@@ -49,7 +49,7 @@ public class Tracker {
         return Arrays.copyOf(this.items, this.position);
     }
 
-    /**
+ /*   /**
     * редактирование заявок
     *
     * @param id
@@ -57,33 +57,31 @@ public class Tracker {
     */
     public void replace(String id, Item item) {
         for (int i = 0; i < this.position; i++){
-           if (this.items[i] != null && this.items[i].getId().equals(id));
-                this.items[i].setId(generateId())
-                this.items[]
+
+            if (this.items[i] != null && this.items[i].getId().equals(id)){
+                 item.setId(id);
+                 this.items[i] = item;
+            }
+
+        }
+
 }
 
- //   }
-//
+
     /**
      * удаление заявок
      *
      * @param id
      */
     public void delete(String id) {
-        Item[] buffer = new Item[this.position];
+
         for (int i = 0; i < this.position; i++) {
             if (this.items[i] != null && this.items[i].getId().equals(id)) {
-                System.arraycopy( items, i + 1 , buffer, i, this.position - i);
-                position--;
+                System.arraycopy( items, i + 1 , items, i, this.position - i);
                 break;
             }
         }
-        for (int j = 0; j < this.position -1; j++) {
-            if (this.items[j] != null && this.items[j].getId().equals(id)) {
-                System.arraycopy( buffer, j , items, j, this.position - j);
-                break;
-            }
-        }
+
     }
 
 
