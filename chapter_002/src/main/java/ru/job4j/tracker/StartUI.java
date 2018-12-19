@@ -114,13 +114,20 @@ public class StartUI {
     private void findItemId() {
         System.out.println("---------------Поиск заявки по номеру ID----------------");
         String name = this.input.ask("Введите ID заявки :");
-        this.tracker.findById(name);
-        System.out.println("-------------Заявка id = " + name + "----------------" );
+        if (this.tracker.findById(name) != null) {
+            System.out.println("-------------Заявка id = " + this.tracker.findById(name) + "----------------");
+        }
+            else if (this.tracker.findById(name) == null) {
+            System.out.println("-------------Заявка id = " + name + " не найдена ----------------");
+        }
     }
     private void findItemName() {
         System.out.println("---------------Поиск заявки по названию----------------");
         String name = this.input.ask("Введите название заявки :");
         this.tracker.findByName(name);
+
+        Item item  = new Item();
+
         System.out.println("-------------Заявка id = " + name + "----------------" );
     }
     private void showMenu() {
