@@ -8,6 +8,7 @@ import java.util.Arrays;
  * @since 0.1
  */
 public class Tracker {
+
     /**
      * Массив для хранение заявок.
      */
@@ -55,17 +56,18 @@ public class Tracker {
     * @param id
     * @param item
     */
-    public void replace(String id, Item item) {
+    public boolean replace(String id, Item item) {
+        boolean exit =  false;
         for (int i = 0; i < this.position; i++){
-
             if (this.items[i] != null && this.items[i].getId().equals(id)){
                  item.setId(id);
                  this.items[i] = item;
+                 exit = true;
                  break;
             }
 
         }
-
+    return exit;
 }
 
 
@@ -74,15 +76,18 @@ public class Tracker {
      *
      * @param id
      */
-    public void delete(String id) {
-
+    public boolean delete(String id) {
+            boolean exit =  true;
         for (int i = 0; i < this.position; i++) {
-            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+            if (this.items[i] == null) {
+                exit = false;
+            } else if (this.items[i] != null && this.items[i].getId().equals(id)) {
                 System.arraycopy( items, i + 1 , items, i, this.position - i);
                 this.position = this.position - 1;
-                break;
+                exit = true;
             }
         }
+        return exit;
 
     }
 

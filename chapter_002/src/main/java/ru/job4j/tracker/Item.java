@@ -17,6 +17,10 @@ public class Item {
         this.codeId = codeId;
         this.id = id;
     }
+    public Item(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
 
        public String getName() {
