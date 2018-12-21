@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import ru.job4j.start.*;
 
+import java.util.Arrays;
+
 /**
  * @version $Id$
  * @since 0.1
@@ -105,29 +107,25 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
         Item item = new Item(name, desc);
-        if (this.tracker.replace(name, item) == true) {
-            System.out.println("-------------Заявка id = " + name + " изменена----------------");
-        } else {
-            System.out.println("-------------Заявка id = " + name + " отсутствует--------------");
+        if (this.tracker.replace(name, item) == true) {System.out.println("Заявка id = " + name + " изменена");}
+        if (this.tracker.replace(name, item) != true){System.out.println("Заявка id = " + name + " отсутствует");
         }
     }
 
     private void deleteItem() {
         System.out.println("---------------Удалаение заявки----------------");
         String name = this.input.ask("Введите ID заявки :");
-        if (this.tracker.delete(name) == true) {
-            System.out.println("-------------Заявка id = " + name + " удалена----------------");
-        } else {
-            System.out.println("-------------Заявка id = " + name + " не найдена----------------");
-        }
+        if (this.tracker.delete(name) == true) {System.out.println("Заявка id = " + name + " удалена");}
+        if (this.tracker.delete(name) != true) {System.out.println("Заявка id = " + name + " не найдена");}
 
-    }
+
+
 
     private void findItemId() {
         System.out.println("---------------Поиск заявки по номеру ID----------------");
         String id = this.input.ask("Введите ID заявки :");
         if (this.tracker.findById(id) != null) {
-            System.out.println("-------------Заявка id = " + this.tracker.findById(id) + "----------------");
+            System.out.println("-------------Заявка id = " + Arrays.toString([) + "----------------");
         }
             else if (this.tracker.findById(id) == null) {
             System.out.println("-------------Заявка id = " + id + " не найдена ----------------");
