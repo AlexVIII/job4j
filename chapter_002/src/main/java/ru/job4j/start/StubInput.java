@@ -8,8 +8,8 @@ public class StubInput implemets Input {
 	public StubInput(String[] answers) {
 		this.answers = answers;
 	}
-	String ask(String guestion);
-	return
+//	String ask(String guestion);
+// return
 
 	public String[] getAnswers() {
 		return answers[position++];
