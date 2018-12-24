@@ -106,17 +106,26 @@ public class StartUI {
         System.out.println("---------------Редактирование заявки----------------");
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
-        Item item = new Item(name, desc);
-        if (this.tracker.replace(name, item) == true) {System.out.println("Заявка id = " + name + " изменена");}
-        if (this.tracker.replace(name, item) != true){System.out.println("Заявка id = " + name + " отсутствует");
+        Item items = new Item(name, desc);
+        if (this.tracker.replace(name, items) == true) {
+            System.out.println("Заявка id = " + name + " изменена");
+        }
+        if (this.tracker.replace(name, items) == false){
+            System.out.println("Заявка id = " + name + " отсутствует");
         }
     }
+
 
     private void deleteItem() {
         System.out.println("---------------Удалаение заявки----------------");
         String name = this.input.ask("Введите ID заявки :");
-        if (this.tracker.delete(name) == true) {System.out.println("Заявка id = " + name + " удалена");}
-        if (this.tracker.delete(name) != true) {System.out.println("Заявка id = " + name + " не найдена");}
+        if (this.tracker.delete(name) == true) {
+            System.out.println("Заявка id = " + name + " удалена");
+        }
+        if (this.tracker.delete(name) == false) {
+            System.out.println("Заявка id = " + name + " не найдена");
+        }
+    }
 
 
 
@@ -124,10 +133,11 @@ public class StartUI {
     private void findItemId() {
         System.out.println("---------------Поиск заявки по номеру ID----------------");
         String id = this.input.ask("Введите ID заявки :");
-        if (this.tracker.findById(id) != null) {
-            System.out.println("-------------Заявка id = " + Arrays.toString([) + "----------------");
+        Item items = this.tracker.findById(id);
+        if (items != null) {
+            System.out.println("-------------Заявка id = " + id + "----------------");
         }
-            else if (this.tracker.findById(id) == null) {
+            else if (items == null) {
             System.out.println("-------------Заявка id = " + id + " не найдена ----------------");
         }
     }
