@@ -107,20 +107,20 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
         Item items = new Item(name, desc);
-        if (this.tracker.replace(name, items) == true) {
+        if (this.tracker.replace(name, items) ) {
             System.out.println("Заявка id = " + name + " изменена");
         }
-        if (this.tracker.replace(name, items) == false){
+        else {
             System.out.println("Заявка id = " + name + " отсутствует");
-        }
+            }
     }
 
 
     private void deleteItem() {
         System.out.println("Удалаение заявки-");
         String name = this.input.ask("Введите ID заявки :");
-        if (this.tracker.delete(name) == true) {
-            System.out.println("Заявка id = " + name + " удалена");
+        if (this.tracker.delete(name)) {
+            System.out.println("Заявка id = " + name + " удалена или отсутствует");
         }
         if (this.tracker.delete(name) == false) {
             System.out.println("Заявка id = " + name + " не найдена");
