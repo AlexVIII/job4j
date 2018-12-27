@@ -40,7 +40,15 @@ public class Item {
 
         public String setId(String id) {
             return this.id;
-
+        }
+        @Override
+        public String toString() {
+        return "Item{" +
+                "id'" + id + '\'' +
+                ", description='" + description +'\'' +
+                ", create='" + create +'\'' +
+                ", codeId='" + codeId +'\'' +
+                ')';
         }
 
 
