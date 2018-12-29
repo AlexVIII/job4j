@@ -14,4 +14,7 @@ public class StubInput implemets Input {
 	public String[] getAnswers() {
 		return answers[position++];
 	}
+	public String ask (String guestion) {
+		return  null
+	}
 }
