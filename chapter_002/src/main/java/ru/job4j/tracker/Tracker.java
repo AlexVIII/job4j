@@ -58,8 +58,8 @@ public class Tracker {
     */
     public boolean replace(String id, Item item) {
         boolean exit =  false;
-        for (int i = 0; i < this.position; i++){
-            if (this.items[i] != null && this.items[i].getId().equals(id)){
+        for (int i = 0; i < this.position; i++) {
+            if (this.items[i] != null && this.items[i].getId().equals(id)) {
                  item.setId(id);
                  this.items[i] = item;
                  exit = true;
@@ -82,7 +82,7 @@ public class Tracker {
             if (this.items[i] == null) {
                 exit = false;
             } else if (this.items[i] != null && this.items[i].getId().equals(id)) {
-                System.arraycopy( items, i + 1 , items, i, this.position - i);
+                System.arraycopy(items, i + 1, items, i, this.position - i);
                 this.position = this.position - 1;
                 exit = true;
             }

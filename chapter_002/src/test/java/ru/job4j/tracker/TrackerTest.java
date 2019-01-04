@@ -35,7 +35,7 @@ public class TrackerTest {
         tracker.add(old);
         Item fresh = new Item("TestNew", "TestDescriptionNew", "123lnew");
         fresh.setId(old.getId());
-        tracker.replace(old.getId(),fresh);
+        tracker.replace(old.getId(), fresh);
         assertThat(tracker.findById(fresh.getId()), is("123lnew"));
 
     }

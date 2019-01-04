@@ -51,8 +51,8 @@ public class StartUI {
         while (!exit) {
             this.showMenu();
             String answer = this.input.ask("Введите пункт меню : ");
+            //добавление заявки вынесено в отдельный метод.
             if (ADD.equals(answer)) {
-                //добавление заявки вынесено в отдельный метод.
                 this.createItem();
             }
             else if (SHOW.equals(answer)) {
@@ -107,7 +107,7 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
         Item items = new Item(name, desc);
-        if (this.tracker.replace(name, items) ) {
+        if (this.tracker.replace(name, items)) {
             System.out.println("Заявка id = " + name + " изменена");
         }
         else {
@@ -147,8 +147,14 @@ public class StartUI {
         System.out.println("Поиск заявки по названию-");
         String name = this.input.ask("Введите название заявки :");
         Item[]items = this.tracker.findByName(name);
-        if (items.length == 0) {System.out.println("Заявки с таким именем не найдены");}
-        else {for (Item item : items) {System.out.println(item);} }
+        if (items.length == 0) {
+            System.out.println("Заявки с таким именем не найдены");
+        }
+        else {
+            for (Item item : items) {
+            System.out.println(item);
+        }
+        }
     }
 
     private void showMenu() {

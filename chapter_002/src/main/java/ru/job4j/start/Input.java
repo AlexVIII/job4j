@@ -1,5 +1,5 @@
 package ru.job4j.start;
 
-public interface Input{
+public interface Input {
 	String ask(String guestion);
 }
