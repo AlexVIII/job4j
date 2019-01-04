@@ -166,6 +166,6 @@ public class StartUI {
      */
     public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();
-        String name =  input.ask("please, enter task's name");
+
     }
 }
