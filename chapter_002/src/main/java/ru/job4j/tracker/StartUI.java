@@ -16,8 +16,8 @@ public class StartUI {
     private static final String SHOW = "1";
     private static final String EDIT = "2";
     private static final String DELL = "3";
-    private static final String FINDid = "4";
-    private static final String FINDname = "5";
+    private static final String FINDID = "4";
+    private static final String FINDNAME = "5";
 
     /**
      * Константа для выхода из цикла.
@@ -54,28 +54,22 @@ public class StartUI {
             //добавление заявки вынесено в отдельный метод.
             if (ADD.equals(answer)) {
                 this.createItem();
-            }
-            else if (SHOW.equals(answer)) {
+            } else if (SHOW.equals(answer)) {
                 //показать все заявки
                 this.showAllItems();
-            }
-            else if (EDIT.equals(answer)) {
+            } else if (EDIT.equals(answer)) {
             //отредактировать заявку
                 this.editItem();
-            }
-            else if (DELL.equals(answer)) {
+            } else if (DELL.equals(answer)) {
                 //удалить заявку
                 this.deleteItem();
-            }
-            else if (FINDid.equals(answer)) {
+            } else if (FINDID.equals(answer)) {
                 //найти заявку по id
                 this.findItemId();
-            }
-            else if (FINDname.equals(answer)) {
+            } else if (FINDNAME.equals(answer)) {
                 //найти заявку по имени
                 this.findItemName();
-            }
-            else if (EXIT.equals(answer)) {
+            } else if (EXIT.equals(answer)) {
                 exit = true;
             }
         }
@@ -109,8 +103,7 @@ public class StartUI {
         Item items = new Item(name, desc);
         if (this.tracker.replace(name, items)) {
             System.out.println("Заявка id = " + name + " изменена");
-        }
-        else {
+        } else {
             System.out.println("Заявка id = " + name + " отсутствует");
             }
     }
@@ -121,8 +114,7 @@ public class StartUI {
         String name = this.input.ask("Введите ID заявки :");
         if (this.tracker.delete(name)) {
             System.out.println("Заявка id = " + name + " удалена или отсутствует");
-        }
-        if (this.tracker.delete(name) == false) {
+        } else {
             System.out.println("Заявка id = " + name + " не найдена");
         }
     }
@@ -137,8 +129,7 @@ public class StartUI {
         Item items = this.tracker.findById(id);
         if (items != null) {
             System.out.println("-------------Заявка id = " + id + "----------------");
-        }
-            else if (items == null) {
+        } else if (items == null) {
             System.out.println("-------------Заявка id = " + id + " не найдена ----------------");
         }
 
@@ -149,8 +140,7 @@ public class StartUI {
         Item[]items = this.tracker.findByName(name);
         if (items.length == 0) {
             System.out.println("Заявки с таким именем не найдены");
-        }
-        else {
+        } else {
             for (Item item : items) {
             System.out.println(item);
         }
@@ -176,7 +166,6 @@ public class StartUI {
      */
     public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();
-
         String name =  input.ask("please, enter task's name");
     }
 }
