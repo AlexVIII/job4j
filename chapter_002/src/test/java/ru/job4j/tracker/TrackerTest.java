@@ -26,9 +26,8 @@ public class TrackerTest {
         String id = item1.getId();
         assertThat(tracker.findById(id), is(item1));
     }
-
-
- /*  @Test
+/*
+    @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
         Item old = new Item("Test", "TestDescription", "123l");
@@ -39,7 +38,6 @@ public class TrackerTest {
         assertThat(tracker.findById(fresh.getId()), is("123lnew"));
 
     }
-
 */
     @Test
     public void whenIFindItemByName() {

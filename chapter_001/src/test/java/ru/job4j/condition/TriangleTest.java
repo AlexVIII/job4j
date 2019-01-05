@@ -5,12 +5,12 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.*;
 
 public class TriangleTest {
-    @Test
+   @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
         // создаем три объекта класса Point.
         Point a = new Point(10, 11);
-        Point b = new Point(5, 4);
-        Point c = new Point(20, 10);
+        Point b = new Point(14, 14);
+        Point c = new Point(14, 11);
 
         // Создаем объект треугольник и передаем в него объекты точек.
         Triangle triangle = new Triangle(a, b, c);
