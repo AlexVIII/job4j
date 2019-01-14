@@ -14,7 +14,7 @@ public class StartUITest {
         new StartUI(input, tracker).init();     //   создаём StartUI и вызываем метод init()
         assertThat(tracker.findAll()[0].getName(), is("test name")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
-   /*
+
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {
         // создаём Tracker
@@ -29,7 +29,7 @@ public class StartUITest {
         assertThat(tracker.findById(item.getId()).getName(), is("test replace"));
     }
 
-   */
+
     @Test
     public void whenFindById (){
         Tracker tracker = new Tracker();
@@ -42,15 +42,15 @@ public class StartUITest {
     public void whenIFindItemByName() {
         Tracker tracker = new Tracker();
         Item[] item  = new Item[3];
-        item[0] = new Item("Test1", "TestDescription1", "123");
-        item[1] = new Item("Test2", "TestDescription2", "1234");
-        item[2] = new Item("Test3", "TestDescription3", "12345");
+        item[0] = new Item("Test", "TestDescription1", "123");
+        item[1] = new Item("Test1", "TestDescription2", "1234");
+        item[2] = new Item("Test2", "TestDescription3", "12345");
         tracker.add(item[0]);
         tracker.add(item[1]);
         tracker.add(item[2]);
         Item[] items = new Item[2];
         items[0] = item[0];
-        items[1] = item[2];
+     //   items[1] = item[1];
         assertThat(tracker.findByName("Test"), is(items));
     }
 
