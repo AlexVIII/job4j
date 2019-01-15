@@ -26,7 +26,7 @@ public class StartUITest {
         // создаём StartUI и вызываем метод init()
         new StartUI(input, tracker).init();
         // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
-        assertThat(tracker.findById(item.getId()).getName(), is("test name"));
+        assertThat(tracker.findAll()[0].getName(), is("test name"));
     }
 
 
@@ -36,7 +36,6 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test name", "desc"));
         Input input = new StubInput(new String[]{"3", item.getId(), "6"}); // создаю StubInput споследовательноятью действий (удаление заявки по номеру ID
-
         new StartUI(input, tracker).init();//создаю StartUI и вызываю метод unit()
         assertThat(tracker.delete(item.getId()), is( "null"));
     }
