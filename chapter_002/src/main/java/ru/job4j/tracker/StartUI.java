@@ -98,10 +98,11 @@ public class StartUI {
 
     private void editItem() {
         System.out.println("Редактирование заявки-");
+        String id = this.input.ask("Введите id заявки :");
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
         Item items = new Item(name, desc);
-        if (this.tracker.replace(name, items)) {
+        if (this.tracker.replace(id, items)) {
             System.out.println("Заявка id = " + name + " изменена");
         } else {
             System.out.println("Заявка id = " + name + " отсутствует");
