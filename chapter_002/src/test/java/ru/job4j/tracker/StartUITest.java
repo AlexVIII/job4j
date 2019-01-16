@@ -4,6 +4,7 @@ import org.junit.Test;
 import ru.job4j.start.Input;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
@@ -38,7 +39,7 @@ public class StartUITest {
         Input input = new StubInput(new String[]{"3", item.getId() , "6"});
         //создаю StartUI и вызываю метод unit()
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0], is("null"));
+        assertThat(tracker.findById(item.getId()), null);
     }
 
 

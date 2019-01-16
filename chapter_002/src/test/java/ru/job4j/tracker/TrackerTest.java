@@ -54,7 +54,7 @@ public class TrackerTest {
         assertThat(tracker.findByName("Test"), is(items));
     }
 
- /*   @Test
+  @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
         Item item1 = new Item ("Test1", "TestDescription1", "1234L");
@@ -67,9 +67,8 @@ public class TrackerTest {
         items[0] = item1;
         items[1] = item2;
         items[2] = item3;
-        tracker.delete("12345L");
-        assertThat(tracker.findById("12345L"), is());
+        tracker.delete(item2.getId());
+        assertThat(tracker.findById(item1.getId()), is(item1));
     }
-    */
-}
+ }
 
