@@ -29,19 +29,39 @@ public class StartUITest {
         assertThat(tracker.findAll()[0].getName(), is("test replace"));
     }
 
-
     @Test
     public void whenDellItem() {
         //создаем Tracker
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test name", "desc"));
         // создаю StubInput споследовательноятью действий (удаление заявки по номеру ID
-         Input input = new StubInput(new String[]{"3", item.getId() , "6"});
-        // Input input = new StubInput(new String[]{"3", "12:24:41.822423.1660865112662" , "6"});
+        Input input = new StubInput(new String[]{"3", item.getId() , "6"});
         //создаю StartUI и вызываю метод unit()
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0].getName(), is("test name"));
+        assertThat(tracker.findAll()[0], is("null"));
     }
+
+
+
+    @Test
+    public void whenFindID() {
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("name", "desc"));
+        // создаю StubInput споследовательноятью действий (поиск заявки по номеру ID
+        Input input = new StubInput(new String[]{"4", item.getId() , "6"});
+        new StartUI(input, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("name"));
+    }
+    @Test
+    public void whenFindName() {
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("subname", "desc1"));
+        // создаю StubInput споследовательноятью действий (поиск заявки по имени заявки
+        Input input = new StubInput(new String[]{"5", "subname" , "6"});
+        new StartUI(input, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("subname"));
+    }
+
 }
 
 
