@@ -39,7 +39,7 @@ public class StartUITest {
         Input input = new StubInput(new String[]{"3", item.getId() , "6"});
         //создаю StartUI и вызываю метод unit()
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item.getId()), null);
+        assertNull(tracker.findById(item.getId()));
     }
 
 
