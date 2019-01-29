@@ -16,4 +16,5 @@ public class Square implements Shape {
         pic.append("++++");
         return pic.toString();
     }
+
 }
