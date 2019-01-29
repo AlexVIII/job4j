@@ -69,5 +69,6 @@ public class PaintTest {
                                         .toString()
                         )
                 );
+        System.setOut(stdout);
     }
 }
