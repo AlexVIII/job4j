@@ -43,10 +43,10 @@ public class PaintTest {
                                 System.lineSeparator(),"",
                                 System.lineSeparator())
                                 .add("++++")
-                                .add("+     +")
-                                .add("+     +")
+                                .add("+  +")
+                                .add("+  +")
                                 .add("++++")
-                                .add(System.lineSeparator())
+                          //      .add(System.lineSeparator())
                                 .toString()
                 )
         );
