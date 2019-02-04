@@ -15,6 +15,7 @@ public class StartUITest {
     @Before
     public void trackerBefore() {
     Tracker tracker = new Tracker();
+
     }
 
     @After
