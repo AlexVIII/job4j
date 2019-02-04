@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import ru.job4j.start.Input;
 
@@ -7,7 +9,20 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
+
 public class StartUITest {
+
+    @Before
+    public void trackerBefore() {
+    Tracker tracker = new Tracker();
+    }
+
+    @After
+    public void trackerAfter() {
+
+    }
+
+
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();     // создаём Tracker
