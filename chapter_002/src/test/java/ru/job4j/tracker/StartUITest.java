@@ -29,12 +29,24 @@ public class StartUITest {
         System.out.println("execute after method");
     }
 
+    private String ls = System.lineSeparator();
+
     @Test
     public void findAllTracker() {
-        new Tracker().findAll();
-                assertThat(this.out.toString(), is(this.stdout.toString()));
+        Tracker tracker = new Tracker();
+        Input input = new StubInput(new String[]{"0", "test name", "desc", "6"});
+        new StartUI(input, tracker).init();
+        assertThat(this.stdout.toString(), is(
+                new StringBuilder().append("Меню.").append(ls)
+                        .append("1. Show all items").append(ls)
+                        .append("Полный список заявок-").append(ls)
+                        .append(input)
+                        // и так далее
+
+        ));
 
     }
+
 
 
     @Test
