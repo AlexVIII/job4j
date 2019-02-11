@@ -40,7 +40,7 @@ public class StartUITest {
                 new StringBuilder().append("Меню.").append(ls)
                         .append("1. Show all items").append(ls)
                         .append("Полный список заявок-").append(ls)
-
+                        .append("test name")
                         // и так далее
 
         ));
