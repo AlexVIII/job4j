@@ -30,6 +30,11 @@ public class StartUITest {
     }
 
     private String ls = System.lineSeparator();
+    private String menu = "Меню." + ls + "0. Add new Item" + ls + "1. Show all items" + ls +
+            "2. Edit item" + ls + "3. Delete item" +ls + "4. Find item by Id" +ls +
+            "5. Find items by name" +ls + "6. Exit Program" +ls;
+
+
 
     @Test
     public void findAllTracker() {
@@ -37,28 +42,36 @@ public class StartUITest {
         Input input = new StubInput(new String[]{"0", "test name", "desc", "6"});
         new StartUI(input, tracker).init();
         assertThat(out.toString(), is(
-                new StringBuilder().append("Меню.").append(ls)
-                        .append("0. Add new Item").append(ls)
-                        .append("1. Show all items").append(ls)
-                        .append("2. Edit item").append(ls)
-                        .append("3. Delete item").append(ls)
-                        .append("4. Find item by Id").append(ls)
-                        .append("5. Find items by name").append(ls)
-                        .append("6. Exit Program").append(ls)
+                new StringBuilder().append(menu)
                         .append("- Добавление новой заявки ---").append(ls)
                         .append("- Новая заявка с getId :").append(tracker.findAll()[0].getId()).append(ls)
-                        .append("Меню.").append(ls)
-                .append("0. Add new Item").append(ls)
-                .append("1. Show all items").append(ls)
-                        .append("2. Edit item").append(ls)
-                                .append("3. Delete item").append(ls)
-                                        .append("4. Find item by Id").append(ls)
-                                                .append("5. Find items by name").append(ls)
-                                                        .append("6. Exit Program").append(ls)
+                       .append(menu)
 
         ));
 
     }
+
+    @Test
+    public void deleteItemId() {
+    //создаем Tracker
+    Tracker tracker = new Tracker();
+    Item item = tracker.add(new Item("test name", "desc"));
+    // создаю StubInput споследовательноятью действий (удаление заявки по номеру ID
+    Input input = new StubInput(new String[]{"3", item.getId() , "6"});
+    //создаю StartUI и вызываю метод unit()
+        new StartUI(input, tracker).init();
+    assertNull(out.toString(), is(
+            new StringBuilder().append(menu)
+            .append("Удалаение заявки-").append(ls)
+                    .append("Введите ID заявки :").append(ls)
+                    .append("Заявка id = ").append(tracker.findAll()[0].getName())
+                    .append(" удалена или отсутствует")
+            .append(menu)
+            ));
+
+}
+
+
 
 
 
