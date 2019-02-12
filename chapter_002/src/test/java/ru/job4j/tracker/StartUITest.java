@@ -64,8 +64,8 @@ public class StartUITest {
             new StringBuilder().append(menu)
             .append("Удалаение заявки-").append(ls)
                     .append("Введите ID заявки :").append(ls)
-                    .append("Заявка id = ").append(tracker.findAll()[0].getName())
-                    .append(" удалена или отсутствует")
+                    .append("Заявка id = ").append(item.getId())
+                    .append(" удалена или отсутствует").append(ls)
             .append(menu)
             ));
 
