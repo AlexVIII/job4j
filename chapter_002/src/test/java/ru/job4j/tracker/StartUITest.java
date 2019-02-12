@@ -36,12 +36,25 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Input input = new StubInput(new String[]{"0", "test name", "desc", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0].getName(), is(
+        assertThat(out.toString(), is(
                 new StringBuilder().append("Меню.").append(ls)
+                        .append("0. Add new Item").append(ls)
                         .append("1. Show all items").append(ls)
-                        .append("Полный список заявок-").append(ls)
-                        .append("test name")
-                        // и так далее
+                        .append("2. Edit item").append(ls)
+                        .append("3. Delete item").append(ls)
+                        .append("4. Find item by Id").append(ls)
+                        .append("5. Find items by name").append(ls)
+                        .append("6. Exit Program").append(ls)
+                        .append("- Добавление новой заявки ---").append(ls)
+                        .append("- Новая заявка с getId :").append(tracker.findAll()[0].getId()).append(ls)
+                        .append("Меню.").append(ls)
+                .append("0. Add new Item").append(ls)
+                .append("1. Show all items").append(ls)
+                        .append("2. Edit item").append(ls)
+                                .append("3. Delete item").append(ls)
+                                        .append("4. Find item by Id").append(ls)
+                                                .append("5. Find items by name").append(ls)
+                                                        .append("6. Exit Program").append(ls)
 
         ));
 
