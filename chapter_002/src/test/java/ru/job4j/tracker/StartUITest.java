@@ -44,8 +44,8 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 new StringBuilder().append(menu)
                         .append("- Добавление новой заявки ---").append(ls)
-                        .append("- Новая заявка с getId :").append(tracker.findAll()[0].getId()).append(ls)
-                       .append(menu)
+                        .append("- Новая заявка с getId : ").append(tracker.findAll()[0].getId()).append(ls)
+                       .append(menu).toString()
 
         ));
 
@@ -62,14 +62,16 @@ public class StartUITest {
         new StartUI(input, tracker).init();
     assertNull(out.toString(), is(
             new StringBuilder().append(menu)
-            .append("Удалаение заявки-").append(ls)
+                    .append("Удаление заявки-").append(ls)
                     .append("Введите ID заявки :").append(ls)
                     .append("Заявка id = ").append(item.getId())
                     .append(" удалена или отсутствует").append(ls)
-            .append(menu)
+                    .append(menu).toString()
             ));
 
 }
+
+
 
 
 
