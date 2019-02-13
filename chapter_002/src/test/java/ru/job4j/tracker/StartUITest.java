@@ -63,13 +63,25 @@ public class StartUITest {
     assertNull(out.toString(), is(
             new StringBuilder().append(menu)
                     .append("Удаление заявки-").append(ls)
-                    .append("Введите ID заявки :").append(ls)
                     .append("Заявка id = ").append(item.getId())
                     .append(" удалена или отсутствует").append(ls)
-                    .append(menu).toString()
+                    .append(menu)
             ));
 
 }
+
+    @Test
+    public void trackerReplace() {
+        Tracker tracker = new Tracker();
+        Item item  = tracker.add(new Item("test name", "desc"));
+        Input input = new StubInput(new String[]{"2", item.getId(), "test replace", "заменили заявку", "6"});
+        assertThat(out.toString(), is(new StringBuilder().append(menu)
+                .append("Редактирование заявки-").append(ls)
+                .append("Введите id заявки :").append(tracker.findAll()[0].getId()).append(ls)
+                .append("Введите имя заявки :").append(tracker.findAll()[0].getName())
+                .append(ls).append(menu)
+        ));
+    }
 
 
 
