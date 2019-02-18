@@ -103,11 +103,13 @@ public class StartUI {
         String desc = this.input.ask("Введите описание заявки :");
         Item items = new Item(name, desc);
         if (this.tracker.replace(id, items)) {
-            System.out.println("Заявка id = " + name + " изменена");
+            System.out.println("Заявка id = " + id + " изменена");
         } else {
-            System.out.println("Заявка id = " + name + " отсутствует");
+            System.out.println("Заявка id = " + id + " отсутствует");
             }
     }
+
+
 
 
     private void deleteItem() {
