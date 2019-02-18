@@ -93,13 +93,27 @@ public class StartUITest {
 
         assertThat(out.toString(), is(new StringBuilder().append(menu)
                 .append("Поиск заявки по номеру ID").append(ls)
-       //         .append("Введите ID заявки :").append(ls)
+            .append("Введите ID заявки :").append(ls)
                 .append("-------------Заявка id = ").append(item.getId()).append("----------------")
                 .append(ls).append(menu).toString()
         ));
    }
 
+    @Test
+    public void findNameTracker() {
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("name", "desc1"));
+        // создаю StubInput споследовательноятью действий (поиск заявки по имени заявки
+        Input input = new StubInput(new String[]{"5", "subname" , "6"});
+        new StartUI(input, tracker).init();
+        assertThat(out.toString(), is(new StringBuilder().append(menu)
+                .append("Поиск заявки по названию-").append(ls)
+                .append("Введите название заявки:").append("name").append(ls)
+                .append("Заявки с таким именем не найдены")
+                .append(ls).append(menu).toString()
 
+        ));
+    }
 
 
 

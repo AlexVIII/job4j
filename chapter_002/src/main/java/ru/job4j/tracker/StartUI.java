@@ -127,6 +127,7 @@ public class StartUI {
 
     private void findItemId() {
         System.out.println("Поиск заявки по номеру ID");
+        System.out.println("Введите ID заявки :");
         String id = this.input.ask("Введите ID заявки :");
 
         Item items = this.tracker.findById(id);
@@ -139,6 +140,7 @@ public class StartUI {
     }
     private void findItemName() {
         System.out.println("Поиск заявки по названию-");
+        System.out.println("Введите название заявки:");
         String name = this.input.ask("Введите название заявки :");
         Item[]items = this.tracker.findByName(name);
         if (items.length == 0) {
