@@ -46,7 +46,7 @@ public class StartUI {
     /**
      * Основой цикл программы.
      */
-    public void init() {
+  /*  public void init() {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
@@ -74,7 +74,7 @@ public class StartUI {
             }
         }
     }
-
+*/
     /**
      * Метод реализует добавленяи новый заявки в хранилище.
      */
@@ -172,5 +172,13 @@ public class StartUI {
     public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();
 
+    }
+    public void init() {
+        MenuTracker menu = new MenuTracker(this.input, this.tracker);
+        menu.fillActions();
+        do {
+            menu.show();
+            menu.select(Integer.valueOf(input.ask("select:")));
+        } while (!"y".equals(this.input.ask("Exit?(y): ")));
     }
 }
