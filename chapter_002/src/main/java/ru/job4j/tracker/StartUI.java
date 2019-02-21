@@ -78,7 +78,7 @@ public class StartUI {
     /**
      * Метод реализует добавленяи новый заявки в хранилище.
      */
-    private void createItem() {
+   private void createItem() {
         System.out.println("- Добавление новой заявки ---");
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
