@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class UserAction {
+public interface UserAction {
 
         /**
          * Метод возвращает ключ опции.
@@ -19,4 +19,4 @@ public class UserAction {
          */
         String info();
     }
-}
+
