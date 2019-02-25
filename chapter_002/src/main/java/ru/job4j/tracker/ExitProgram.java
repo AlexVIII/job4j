@@ -1,9 +1,18 @@
 package ru.job4j.tracker;
 
+import ru.job4j.start.Input;
+
 public class ExitProgram implements UserAction {
+    private String nm;
+    private int key;
+
+    public ExitProgram(int key,String nm){
+        this.nm = nm;
+        this.key = key;
+    }
     @Override
     public int key() {
-        return ADD;
+        return key;
     }
 
     @Override
@@ -13,6 +22,6 @@ public class ExitProgram implements UserAction {
 
     @Override
     public String info() {
-        return "Exit program";
+        return String.format("%d, %s", key, nm);
     }
 }

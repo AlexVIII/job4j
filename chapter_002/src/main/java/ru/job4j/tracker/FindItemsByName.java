@@ -1,10 +1,20 @@
 package ru.job4j.tracker;
 
+import ru.job4j.start.Input;
+
 public class FindItemsByName implements UserAction {
+    private String nm;
+    private int key;
+
+    public FindItemsByName(int key,String nm){
+        this.nm = nm;
+        this.key = key;
+    }
     @Override
     public int key() {
-        return ADD;
+        return key;
     }
+
 
     @Override
     public void execute(Input input, Tracker tracker) {
@@ -23,6 +33,6 @@ public class FindItemsByName implements UserAction {
 
         @Override
         public String info () {
-            return "Find items by name";
+            return String.format("%d, %s", key, nm);
         }
     }

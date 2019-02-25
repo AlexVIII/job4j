@@ -1,10 +1,20 @@
 package ru.job4j.tracker;
 
+import ru.job4j.start.Input;
+
 public class FindItemById implements UserAction {
+    private String nm;
+    private int key;
+
+    public FindItemById(int key,String nm){
+        this.nm = nm;
+        this.key = key;
+    }
     @Override
     public int key() {
-        return ADD;
+        return key;
     }
+
 
     @Override
     public void execute(Input input, Tracker tracker) {
@@ -14,13 +24,13 @@ public class FindItemById implements UserAction {
         if (items != null) {
             System.out.println("-------------Item id = " + id + "----------------");
         } else if (items == null) {
-            System.out.println("-------------Заявка Description : " + item.getDesc());
+            System.out.println("-------------Заявка Description : " + items.getDescription());
         }
     }
 
         @Override
         public String info () {
-            return "Find item by Id";
+            return String.format("%d, %s", key, nm);
         }
     }
 

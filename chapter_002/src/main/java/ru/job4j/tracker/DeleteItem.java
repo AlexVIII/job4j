@@ -1,11 +1,19 @@
 package ru.job4j.tracker;
 
+import ru.job4j.start.Input;
+
 public class DeleteItem implements UserAction {
+    private String nm;
+    private int key;
+
+    public DeleteItem(int key,String nm){
+        this.nm = nm;
+        this.key = key;
+    }
     @Override
     public int key() {
-        return ADD;
+        return key;
     }
-
     @Override
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Delete item --------------");
@@ -19,6 +27,6 @@ public class DeleteItem implements UserAction {
 
     @Override
     public String info() {
-        return "Delete item.";
+        return String.format("%d, %s", key, nm);
     }
 }

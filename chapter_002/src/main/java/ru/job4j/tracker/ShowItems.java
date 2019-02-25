@@ -1,9 +1,18 @@
 package ru.job4j.tracker;
 
+import ru.job4j.start.Input;
+
 public class ShowItems implements UserAction {
+    private String nm;
+    private int key;
+
+    public ShowItems(int key,String nm){
+        this.nm = nm;
+        this.key = key;
+    }
     @Override
     public int key() {
-        return ADD;
+        return key;
     }
 
     @Override
@@ -17,7 +26,7 @@ public class ShowItems implements UserAction {
 
     @Override
     public String info() {
-        return "Show Items.";
+        return String.format("%d, %s", key, nm);
     }
 }
 
