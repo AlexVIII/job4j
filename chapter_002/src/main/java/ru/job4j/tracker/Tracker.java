@@ -103,7 +103,7 @@ public class Tracker {
         Item[] found = new Item[this.position];
         int counter = 0;
         for (int i = 0; i < this.items.length; i++) {
-            if (this.items[i] != null && this.items[i].getName().equals(key)) {
+            if (this.items[i] != null && this.items[i].getName().contains(key)) {
                 found[counter++] = this.items[i];
             }
         }
