@@ -19,12 +19,12 @@ public class FindItemById implements UserAction {
     @Override
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Find item by id --------------");
-        String name = input.ask("Please, provide item name:");
-        Item items = this.tracker.findById(id);
+        String id = input.ask("Please, provide item ID :");
+        Item items = tracker.findById(id);
         if (items != null) {
-            System.out.println("-------------Item id = " + id + "----------------");
+            System.out.println("-------------Item ID = " + id + "----------------");
         } else if (items == null) {
-            System.out.println("-------------Заявка Description : " + items.getDescription());
+            System.out.println("-------------Item Description : " + items.getDescription());
         }
     }
 

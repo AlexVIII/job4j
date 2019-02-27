@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import ru.job4j.start.Input;
 
+
 public class ShowItems implements UserAction {
     private String nm;
     private int key;
@@ -18,7 +19,7 @@ public class ShowItems implements UserAction {
     @Override
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Show all items --------------");
-        Item[] items = this.tracker.findAll();
+        Item[] items = tracker.findAll();
         for (Item item :items) {
             System.out.println(item);
         }

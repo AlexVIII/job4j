@@ -19,10 +19,11 @@ public class UpdateItem implements UserAction {
     @Override
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Edit item --------------");
-        String name = input.ask("Please, provide item name:");
-        String desc = input.ask("Please, provide item description:");
+        String id = input.ask("Please, provide item ID :");
+        String name = input.ask("Please, provide item Name:");
+        String desc = input.ask("Please, provide item Description:");
         Item item = new Item(name, desc);
-        if (this.tracker.replace(id, items)) {
+        if (tracker.replace(id, item)) {
             System.out.println("Item id = " + id + " change");
         } else {
             System.out.println("Item id = " + id + " is missing");

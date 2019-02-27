@@ -20,7 +20,7 @@ public class FindItemsByName implements UserAction {
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Find Items by name--------------");
         String name = input.ask("Please, provide item name:");
-        Item[] items = this.tracker.findByName(name);
+        Item[] items = tracker.findByName(name);
         if (items.length == 0) {
             System.out.println("Items with this name not found");
         } else {
