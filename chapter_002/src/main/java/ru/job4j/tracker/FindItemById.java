@@ -23,8 +23,8 @@ public class FindItemById implements UserAction {
         Item items = tracker.findById(id);
         if (items != null) {
             System.out.println("-------------Item ID = " + id + "----------------");
-        } else if (items == null) {
-            System.out.println("-------------Item Description : " + items.getDescription());
+        } else  {
+            System.out.println("-------------Item not found ---------------");
         }
     }
 

@@ -35,7 +35,8 @@ public class StartUI {
 
     /**
      * Конструтор инициализирующий поля.
-     * @param input ввод данных.
+     *
+     * @param input   ввод данных.
      * @param tracker хранилище заявок.
      */
     public StartUI(Input input, Tracker tracker) {
@@ -75,10 +76,11 @@ public class StartUI {
         }
     }
 */
+
     /**
      * Метод реализует добавленяи новый заявки в хранилище.
      */
-   private void createItem() {
+    private void createItem() {
         System.out.println("- Добавление новой заявки ---");
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
@@ -87,12 +89,12 @@ public class StartUI {
         System.out.println("- Новая заявка с getId : " + item.getId() + "");
     }
 
-    private  void showAllItems() {
+    private void showAllItems() {
         System.out.println("Полный список заявок-");
-         Item[] items = this.tracker.findAll();
-         for (Item item :items) {
-             System.out.println(item);
-         }
+        Item[] items = this.tracker.findAll();
+        for (Item item : items) {
+            System.out.println(item);
+        }
 
     }
 
@@ -106,10 +108,8 @@ public class StartUI {
             System.out.println("Заявка id = " + id + " изменена");
         } else {
             System.out.println("Заявка id = " + id + " отсутствует");
-            }
+        }
     }
-
-
 
 
     private void deleteItem() {
@@ -121,8 +121,6 @@ public class StartUI {
             System.out.println("Заявка id = " + name + " не найдена");
         }
     }
-
-
 
 
     private void findItemId() {
@@ -138,17 +136,18 @@ public class StartUI {
         }
 
     }
+
     private void findItemName() {
         System.out.println("Поиск заявки по названию-");
         System.out.println("Введите название заявки:");
         String name = this.input.ask("Введите название заявки :");
-        Item[]items = this.tracker.findByName(name);
+        Item[] items = this.tracker.findByName(name);
         if (items.length == 0) {
             System.out.println("Заявки с таким именем не найдены");
         } else {
             for (Item item : items) {
-            System.out.println(item);
-        }
+                System.out.println(item);
+            }
         }
     }
 
@@ -167,18 +166,33 @@ public class StartUI {
 
     /**
      * Запускт программы.
+     *
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
 
     }
-    public void init() {
+  /*  public void init() {
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
         menu.fillActions();
         do {
             menu.show();
             menu.select(Integer.valueOf(input.ask("select:")));
+        } while (!"y".equals(this.input.ask("Exit?(y): ")));
+    }
+    */
+
+    public void init() {
+        MenuTracker menu = new MenuTracker(this.input, this.tracker);
+        int range = new ArrayList<>();
+        menu.fillActions();
+        for (int i = 0; i < menu.getActionsLentgh(); i++) {
+            range.add(i);
+        }
+        do {
+            menu.show();
+            menu.select(input.ask("select:", range));
         } while (!"y".equals(this.input.ask("Exit?(y): ")));
     }
 }
