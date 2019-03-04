@@ -6,7 +6,7 @@ public class DeleteItem implements UserAction {
     private String nm;
     private int key;
 
-    public DeleteItem(int key,String nm){
+    public DeleteItem(int key, String nm) {
         this.nm = nm;
         this.key = key;
     }

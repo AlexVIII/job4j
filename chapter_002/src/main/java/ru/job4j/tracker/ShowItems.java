@@ -7,7 +7,7 @@ public class ShowItems implements UserAction {
     private String nm;
     private int key;
 
-    public ShowItems(int key,String nm){
+    public ShowItems(int key, String nm) {
         this.nm = nm;
         this.key = key;
     }

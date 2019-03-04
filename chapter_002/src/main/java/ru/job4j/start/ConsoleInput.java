@@ -18,7 +18,7 @@ public  class ConsoleInput implements Input {
         boolean exist = false;
         for  (int value :range) {
             if (value == key) {
-                exist =true;
+                exist = true;
                 break;
             }
         }

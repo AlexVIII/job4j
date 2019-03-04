@@ -6,7 +6,7 @@ public class ExitProgram implements UserAction {
     private String nm;
     private int key;
 
-    public ExitProgram(int key,String nm){
+    public ExitProgram(int key, String nm) {
         this.nm = nm;
         this.key = key;
     }

@@ -57,8 +57,8 @@ public class TrackerTest {
   @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item1 = new Item ("Test1", "TestDescription1", "1234L");
-        Item item2 = new Item ("Test2", "TestDescription2", "12345L");
+        Item item1 = new Item("Test1", "TestDescription1", "1234L");
+        Item item2 = new Item("Test2", "TestDescription2", "12345L");
         Item item3 = new Item("Test3", "TestDescription3", "123456L");
         tracker.add(item1);
         tracker.add(item2);

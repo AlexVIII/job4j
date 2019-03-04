@@ -6,7 +6,7 @@ public class FindItemsByName implements UserAction {
     private String nm;
     private int key;
 
-    public FindItemsByName(int key,String nm){
+    public FindItemsByName(int key, String nm) {
         this.nm = nm;
         this.key = key;
     }
@@ -32,7 +32,7 @@ public class FindItemsByName implements UserAction {
     }
 
         @Override
-        public String info () {
+        public String info() {
             return String.format("%d, %s", key, nm);
         }
     }

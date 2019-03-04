@@ -6,7 +6,7 @@ public class UpdateItem implements UserAction {
     private String nm;
     private int key;
 
-    public UpdateItem(int key,String nm){
+    public UpdateItem(int key, String nm) {
         this.nm = nm;
         this.key = key;
     }

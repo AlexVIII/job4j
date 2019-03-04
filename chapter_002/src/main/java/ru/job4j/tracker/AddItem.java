@@ -6,7 +6,7 @@ public class AddItem implements UserAction {
     private String nm;
     private int key;
 
-    public AddItem(int key,String nm){
+    public AddItem(int key, String nm) {
         this.nm = nm;
         this.key = key;
     }
