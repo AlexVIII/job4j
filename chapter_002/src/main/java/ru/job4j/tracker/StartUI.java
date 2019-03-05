@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import ru.job4j.start.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -185,7 +186,7 @@ public class StartUI {
 
     public void init() {
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
-        int range = new ArrayList<>();
+        ArrayList range = new ArrayList<>();
         menu.fillActions();
         for (int i = 0; i < menu.getActionsLentgh(); i++) {
             range.add(i);
