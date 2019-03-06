@@ -5,6 +5,7 @@ import ru.job4j.start.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 /**
  * @version $Id$
  * @since 0.1
@@ -193,7 +194,7 @@ public class StartUI {
         }
         do {
             menu.show();
-            menu.select(input.ask("select:", range));
+            menu.select(input.ask("select:", List<Integer>range));
         } while (!"y".equals(this.input.ask("Exit?(y): ")));
     }
 }
