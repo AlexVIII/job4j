@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import ru.job4j.start.Input;
 
+import java.util.List;
+
 public class StubInput implements Input {
 
 	private  String[] answers;
@@ -17,5 +19,10 @@ public class StubInput implements Input {
 	@Override
 	public String ask(String question) {
 		return  answers[position++];
+	}
+
+	@Override
+	public int ask(String question, List<Integer> range) {
+		return 0;
 	}
 }
