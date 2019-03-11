@@ -173,8 +173,12 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ValidateInput(), new Tracker()).init();
-
+        new StartUI(
+                new ValidateInput(
+                        new ConsoleInput()
+                ),
+                new Tracker()
+        ).init();
     }
   /*  public void init() {
         MenuTracker menu = new MenuTracker(this.input, this.tracker);

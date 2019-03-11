@@ -1,10 +1,23 @@
 package ru.job4j.tracker;
 
 import ru.job4j.start.ConsoleInput;
+import ru.job4j.start.Input;
 
 import java.util.List;
 
-public class ValidateInput extends ConsoleInput {
+
+public class ValidateInput implements Input {
+
+	private final Input input;
+
+	public ValidateInput(final Input input) {
+		this.input = input;
+	}
+
+	@Override
+	public String ask(String question) {
+		return this.input.ask(question);
+	}
 	public int ask(String question, List<Integer> range) {
 		boolean invalid = true;
 		int value = -1;
