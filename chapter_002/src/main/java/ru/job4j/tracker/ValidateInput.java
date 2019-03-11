@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-import ru.job4j.start.ConsoleInput;
+//import ru.job4j.start.ConsoleInput;
 import ru.job4j.start.Input;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class ValidateInput implements Input {
 		int value = -1;
 		do {
 			try {
-				value = super.ask(question, range);
+				value = this.ask(question, range);
 				invalid = false;
 			} catch (MenuOutException moe) {
 				System.out.println("Please select key from menu.");
