@@ -16,13 +16,15 @@ public class StubInput implements Input {
 	public String getAnswers() {
 		return answers[position++];
 	}
-	@Override
+
 	public String ask(String question) {
 		return  answers[position++];
 	}
 
-	@Override
-	public int ask(String question, List<Integer> range) {
-		return 0;
-	}
+
+
+    public int ask(String question, List<Integer> range) {
+
+        return Integer.valueOf(this.ask(question));
+    }
 }
