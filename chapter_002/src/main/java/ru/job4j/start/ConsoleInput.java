@@ -22,12 +22,18 @@ public  class ConsoleInput implements Input {
                 break;
             }
         }
-        if (exist) {
+			if (!exist){
+				throw new MenuOutException("out of menu range");
+			}
+			return key;
+		/*
+		if (exist) {
             return key;
         } else {
             throw new MenuOutException("out of menu range");
         }
-
+*/
     }
+	
 }
 
