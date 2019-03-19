@@ -3,13 +3,14 @@ package ru.job4j.tracker;
 import ru.job4j.start.Input;
 
 
-public class ShowItems implements UserAction {
+public class ShowItems extends BaseAction {
     private String nm;
     private int key;
 
     public ShowItems(int key, String nm) {
-        this.nm = nm;
-        this.key = key;
+        super(key, nm);
+        //    this.nm = nm;
+        //   this.key = key;
     }
     @Override
     public int key() {

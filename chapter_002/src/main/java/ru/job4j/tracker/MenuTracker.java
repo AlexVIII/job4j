@@ -18,6 +18,8 @@ public class MenuTracker {
      * @param хранит ссылку на массив типа UserAction.
      */
     private List<UserAction> actions = new ArrayList<>();
+	
+//	private int position = 0;
 
     /**
      * Конструктор.
@@ -51,7 +53,11 @@ public class MenuTracker {
         this.actions.add(new FindItemsByName(5, "Find items by name"));
         this.actions.add(new ExitProgram(6, "Exit Program"));
     }
-
+/*
+	public void select(int key) {
+		
+	}
+	*/
     /**
      * Метод в зависимости от указанного ключа, выполняет соотвествующие действие.
      *

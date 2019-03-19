@@ -2,13 +2,14 @@ package ru.job4j.tracker;
 
 import ru.job4j.start.Input;
 
-public class FindItemById implements UserAction {
+public class FindItemById extends BaseAction {
     private String nm;
     private int key;
 
     public FindItemById(int key, String nm) {
-        this.nm = nm;
-        this.key = key;
+        super(key, nm);
+        //    this.nm = nm;
+        //   this.key = key;
     }
     @Override
     public int key() {
