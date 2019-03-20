@@ -19,7 +19,7 @@ public class MenuTracker {
      */
     private List<UserAction> actions = new ArrayList<>();
 	
-//	private int position = 0;
+
 
     /**
      * Конструктор.
