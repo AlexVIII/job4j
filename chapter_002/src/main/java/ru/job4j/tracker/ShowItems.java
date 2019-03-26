@@ -25,10 +25,10 @@ public class ShowItems extends BaseAction {
             System.out.println(item);
         }
     }
-
+/*
     @Override
     public String info() {
         return String.format("%d, %s", key, nm);
-    }
+    }*/
 }
 

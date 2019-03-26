@@ -26,8 +26,9 @@ public class DeleteItem extends BaseAction {
         }
     }
 
-    @Override
+  /*  @Override
     public String info() {
         return String.format("%d, %s", key, nm);
     }
+    */
 }
