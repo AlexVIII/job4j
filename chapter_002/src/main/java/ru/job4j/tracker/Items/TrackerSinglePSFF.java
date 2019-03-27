@@ -1,4 +1,5 @@
 package ru.job4j.tracker.Items;
+
 import ru.job4j.tracker.Item;
 
 public class TrackerSinglePSFF {
@@ -9,8 +10,8 @@ public class TrackerSinglePSFF {
         return Holder.INSTANCE;
     }
 
-    public Item add(Item model) {
-        return model;
+    public Item add(Item name) {
+        return name;
     }
 
     private static final class Holder {

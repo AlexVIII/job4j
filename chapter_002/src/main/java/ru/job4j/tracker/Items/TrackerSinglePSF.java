@@ -1,5 +1,7 @@
+package ru.job4j.tracker.Items;
+
 import ru.job4j.tracker.Item;
-import ru.job4j.tracker.Items;
+
 
 public class TrackerSinglePSF {
     private static TrackerSinglePSF instance;
