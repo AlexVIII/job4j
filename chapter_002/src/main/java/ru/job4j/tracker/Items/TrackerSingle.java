@@ -2,7 +2,7 @@ package ru.job4j.tracker.Items;
 
 import ru.job4j.tracker.Item;
 
-public class TrackerSingle {
+public enum TrackerSingle {
     INSTANCE; // здесь мы указываем перечисления.
 
     // Конструкторы и методы.
