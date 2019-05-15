@@ -22,8 +22,7 @@ public class PhoneDictionary {
     public List<Person> find(String key) {
         List<Person> result = new ArrayList<>();
         if (persons.contains(key));
-        result = persons.getsuname
-
+        result = persons.getName;
             return result;
     }
 }
