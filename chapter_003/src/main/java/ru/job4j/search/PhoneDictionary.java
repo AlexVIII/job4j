@@ -15,10 +15,15 @@ public class PhoneDictionary {
      * @param key Ключ поиска.
      * @return Список подощедщих пользователей.
      */
+
+
+
+
     public List<Person> find(String key) {
         List<Person> result = new ArrayList<>();
+        if (persons.contains(key));
+        result = persons.getsuname
 
-        return result;
-
+            return result;
     }
 }
