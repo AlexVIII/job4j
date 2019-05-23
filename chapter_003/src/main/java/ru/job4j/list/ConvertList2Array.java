@@ -15,7 +15,6 @@ public class ConvertList2Array {
                 j = 0;
                 i++;
             }
-
         }
         return array;
     }
