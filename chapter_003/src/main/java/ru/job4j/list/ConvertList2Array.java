@@ -5,10 +5,9 @@ import java.util.List;
 
 public class ConvertList2Array {
     public int[][] toArray(List<Integer> list, int rows) {
-        int cells = list.size() / rows;
+        int cells = (list.size() / rows) + 1;
         int[][] array = new int[rows][cells];
         int i = 0, j = 0;
-        //int tabl = rows * cells;
         for (int element : list) {
             array[i][j] = element;
             j++;
