@@ -15,10 +15,10 @@ public class ConvertList2Array {
                 j = 0;
                 i++;
             }
-            int tabl = i * j;
+        /*    int tabl = i * j;
             if (list.size() - tabl < rows) {
                 array[i][j] = 0;
-            }
+            } */
         }
         return array;
     }
