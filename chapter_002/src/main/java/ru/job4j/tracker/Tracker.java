@@ -51,8 +51,7 @@ public class Tracker {
      */
 
     public Item[] findAll() {
-     //   return Arrays.copyOf(this.items, this.position); замена на метод Array
-        return Arrays.copyOf(items,position);
+        return Arrays.copyOf(this.items, this.position);
     }
 
  /*   /**
@@ -121,7 +120,7 @@ public class Tracker {
      * @param id
      * @return
      */
-    public Item findById(String id) {
+    /* public Item findById(String id) {
         Item result = null;
         for (int i = 0; i < this.position; i++) {
             if (this.items[i] != null && this.items[i].getId().equals(id)) {
@@ -129,6 +128,13 @@ public class Tracker {
                 break;
             }
         }
+        return result;
+    }
+    */
+    public Item findById(String id) {
+
+
+        Item result = items.indexOf(String id);
         return result;
     }
 
