@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -12,7 +13,9 @@ public class Tracker {
     /**
      * Массив для хранение заявок.
      */
-    private final Item[] items = new Item[100];
+  //  private final Item[] items = new Item[100]; замена на метод Array
+    private final ArrayList<Item> items = new ArrayList<>();
+
     /**
      * Указатель ячейки для новой заявки.
      */
@@ -25,7 +28,8 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[this.position++] = item;
+        // this.items[this.position++] = item; замена на метод Array
+        items.add(position,item);
         return item;
     }
 
@@ -47,7 +51,8 @@ public class Tracker {
      */
 
     public Item[] findAll() {
-        return Arrays.copyOf(this.items, this.position);
+     //   return Arrays.copyOf(this.items, this.position); замена на метод Array
+        return Arrays.copyOf(items,position);
     }
 
  /*   /**
