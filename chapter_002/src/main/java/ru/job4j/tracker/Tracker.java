@@ -111,7 +111,7 @@ public class Tracker {
      * @return
      */
 
-    public Item[] findByName(String key) {
+  /*  public Item[] findByName(String key) {
         Item[] found = new Item[this.position];
         int counter = 0;
         for (int i = 0; i < this.position; i++) {
@@ -121,7 +121,17 @@ public class Tracker {
         }
         return Arrays.copyOf(found, counter);
     }
+*/
+  public List<Item> findByName(String key){
+    ArrayList<Item> list = new ArrayList<>();
+      for (int i = 0; i < this.position; i++){
+          if (items != null && this.items.get(i).getName().contains(key)) {
+              list.add(this.items.get(i));
 
+          }
+      }
+      return list;
+  }
     /**
      * получение заявки по id
      *
