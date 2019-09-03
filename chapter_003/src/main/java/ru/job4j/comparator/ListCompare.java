@@ -15,16 +15,13 @@ public class ListCompare implements Comparator<String> {
             rst1 = Character.compare(cl, cr);
             if (rst1 != 0) {
                 break;
+            }
         }
-
+            if(rst1 == 0){
+                rst1 = Integer.compare(l, r);
+}
             return rst1;
 
-        }
 
-
-
-    }
-
-
-
+   }
 }
