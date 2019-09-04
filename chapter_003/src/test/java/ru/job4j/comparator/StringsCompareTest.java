@@ -1,3 +1,5 @@
+package ru.job4j.comparator;
+
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
