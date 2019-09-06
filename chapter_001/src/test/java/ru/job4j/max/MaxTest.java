@@ -9,7 +9,7 @@ public class MaxTest {
     public void whenFirstLessSecond() {
         Max maks = new Max();
         double result = maks.maxim(1, 2, 3);
-        assertThat(result, is(8));
+        assertThat(result, is(3.0));
     }
 
 }
