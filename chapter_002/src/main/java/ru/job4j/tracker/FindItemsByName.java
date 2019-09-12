@@ -21,7 +21,7 @@ public class FindItemsByName extends BaseAction {
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Find Items by name--------------");
         String name = input.ask("Please, provide item name:");
-        Item[] items = tracker.findByName(name);
+        Item[] items = tracker.findByName(name).toArray(new Item[0]);
         if (items.length == 0) {
             System.out.println("Items with this name not found");
         } else {
