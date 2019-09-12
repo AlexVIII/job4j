@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -52,7 +51,7 @@ public class Tracker {
      * @return
      */
 
-    public List<Item> findAll() {
+    public Item[] findAll() {
         List<Item> result = new ArrayList<>(this.items);
         return result;
     }
