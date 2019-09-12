@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 import ru.job4j.start.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -94,7 +93,7 @@ public class StartUI {
 
     private void showAllItems() {
         System.out.println("Полный список заявок-");
-        Item[] items = this.tracker.findAll();
+        List<Item> items = this.tracker.findAll();
         for (Item item : items) {
             System.out.println(item);
         }
@@ -144,7 +143,7 @@ public class StartUI {
         System.out.println("Поиск заявки по названию-");
         System.out.println("Введите название заявки:");
         String name = this.input.ask("Введите название заявки :");
-        Item[] items = this.tracker.findByName(name);
+        List<Item> items = tracker.findByName(name);
         if (items.length == 0) {
             System.out.println("Заявки с таким именем не найдены");
         } else {
