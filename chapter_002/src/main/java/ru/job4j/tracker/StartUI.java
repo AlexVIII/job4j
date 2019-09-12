@@ -144,14 +144,11 @@ public class StartUI {
         System.out.println("Введите название заявки:");
         String name = this.input.ask("Введите название заявки :");
         List<Item> items = tracker.findByName(name);
-        if (items.length == 0) {
-            System.out.println("Заявки с таким именем не найдены");
-        } else {
-            for (Item item : items) {
+        for (Item item : items) {
                 System.out.println(item);
             }
         }
-    }
+
 
     private void showMenu() {
         System.out.println("Меню.");
