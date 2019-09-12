@@ -10,7 +10,7 @@ public class User {
         this.name = name;
         this.city = city;
     }
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 

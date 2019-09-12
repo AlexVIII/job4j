@@ -19,7 +19,7 @@ public class Square implements Shape {
         pic.append("++++");
         return pic.toString();
     }
-    public static void main(String args[]) {
+    public static void main(String[]args) {
         StringBuilder pic = new StringBuilder();
         pic.append("++++");
         pic.append("\r\n");

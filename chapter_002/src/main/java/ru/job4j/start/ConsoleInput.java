@@ -13,7 +13,7 @@ public  class ConsoleInput implements Input {
         return  scanner.nextLine();
 
     }
-    public  int ask(String question, List<Integer>range) {
+    public  int ask(String question, List<Integer> range) {
         int key = Integer.valueOf(this.ask(question));
         boolean exist = false;
         for  (int value :range) {
@@ -22,7 +22,7 @@ public  class ConsoleInput implements Input {
                 break;
             }
         }
-			if (!exist){
+			if (!exist) {
 				throw new MenuOutException("out of menu range");
 			}
 			return key;

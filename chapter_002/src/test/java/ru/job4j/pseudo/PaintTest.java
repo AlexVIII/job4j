@@ -40,7 +40,7 @@ public class PaintTest {
                 this.out.toString(),
                 is(
                         new StringJoiner(
-                                System.lineSeparator(),"",
+                                System.lineSeparator(), "",
                                 System.lineSeparator())
                                 .add("++++")
                                 .add("+  +")

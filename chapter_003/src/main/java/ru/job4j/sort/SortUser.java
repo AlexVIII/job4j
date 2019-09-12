@@ -11,10 +11,10 @@ class SortUser {
         return new TreeSet<User>(list);
     }
 
-    public void  SortNameLength(List<User> users){
-    users.sort(new Comparator<User>(){
+    public void  sortNameLength(List<User> users) {
+    users.sort(new Comparator<User>() {
     @Override
-    public int compare(User o1, User o2){
+    public int compare(User o1, User o2) {
         return Integer.compare(o1.getName().length(), o2.getName().length());
     }
 
@@ -22,12 +22,12 @@ class SortUser {
     );
     }
 
-    public void sortByAllFields (List<User> users){
-        users.sort(new Comparator<User>(){
+    public void sortByAllFields(List<User> users) {
+        users.sort(new Comparator<User>() {
             @Override
-            public int compare(User o1, User o2){
+            public int compare(User o1, User o2) {
                 int result = o1.getName().compareTo(o2.getName());
-                return result != 0 ? result: Integer.compare(o1.getAge(), o2.getAge());
+                return result != 0 ? result : Integer.compare(o1.getAge(), o2.getAge());
             }
 
         }

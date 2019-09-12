@@ -87,16 +87,17 @@ public class Tracker {
     public boolean delete(String id) {
             boolean exit =  true;
         for (int i = 0; i < this.position; i++) {
-        //    if (items == null) {
-         //       exit = false;
-         //   } else if (items != null && item.getId().equals(id)) {
+        /*  if (items==null) {
+                  exit = false;
+            } else if (items != null && item.getId().equals(id)) {
+            */
             if (items != null && items.get(i).getId().equals(id)) {
                 this.items.remove(i);
                /* System.arraycopy(items, i + 1, items, i, this.position - i);
                 this.position = this.position - 1;
                 exit = true;
                 */
-                this.position --;
+                this.position--;
             }
         }
         return exit;
@@ -122,9 +123,9 @@ public class Tracker {
         return Arrays.copyOf(found, counter);
     }
 */
-  public List<Item> findByName(String key){
+  public List<Item> findByName(String key) {
     ArrayList<Item> list = new ArrayList<>();
-      for (int i = 0; i < this.position; i++){
+      for (int i = 0; i < this.position; i++) {
           if (items != null && this.items.get(i).getName().contains(key)) {
               list.add(this.items.get(i));
 
