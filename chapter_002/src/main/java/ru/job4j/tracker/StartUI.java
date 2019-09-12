@@ -93,7 +93,7 @@ public class StartUI {
 
     private void showAllItems() {
         System.out.println("Полный список заявок-");
-        List<Item> items = this.tracker.findAll();
+        Item[] items = this.tracker.findAll();
         for (Item item : items) {
             System.out.println(item);
         }
