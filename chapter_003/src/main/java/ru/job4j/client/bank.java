@@ -16,6 +16,7 @@ public class bank {
 
         public void addUser(Client client) {
             this.clients.put(ru.job4j.client.Client());
+
         }
 
 //        /*добавление пользователя*/
