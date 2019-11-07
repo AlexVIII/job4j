@@ -1,5 +1,7 @@
 package ru.job4j.client;
 
+import ru.job4j.list.User;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,10 +9,6 @@ public class bank {
     public static void main(String[] args) {
        String name, account;
        Integer passport;
-
-
-
-
         /*добавление пользователя*/
         public void addUser (User user){
             Map<String, Integer> client = new HashMap<String, Integer>();
