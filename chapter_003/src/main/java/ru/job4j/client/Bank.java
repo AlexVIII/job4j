@@ -16,7 +16,7 @@ public class Bank {
      /* User clients = new User();
      System.out.println(clients.passport);
      */
-        Map <User, List<Account>> account = new HashMap <>();
+        Map <User, List <Account>> accounts = new HashMap <>();
 
 
     }
@@ -33,8 +33,6 @@ public class Bank {
     }
 
 
-
-
     //  удаление пользователя
     public void deleteUser(User user) {
         for (String person : client){
@@ -46,7 +44,8 @@ public class Bank {
     //добавить счёт пользователю
     public void addAccountToUser(String passport, Account account) {
 
-        for ()
+
+
 
 
     }
