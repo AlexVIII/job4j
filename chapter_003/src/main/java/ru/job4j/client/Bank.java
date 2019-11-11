@@ -43,7 +43,11 @@ public class Bank {
 
     //добавить счёт пользователю
     public void addAccountToUser(String passport, Account account) {
+        Map <User, List <Account>> accounts = new HashMap <>();
+    for(key : accounts.put(passport, requisites)) {
+        accounts.put(accounts.put(client.), account.requisites);
 
+    }
 
 
 
