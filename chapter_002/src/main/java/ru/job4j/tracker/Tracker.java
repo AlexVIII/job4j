@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @version $Id$
@@ -51,10 +51,13 @@ public class Tracker {
      * @return
      */
 
-    public Item[] findAll() {
+
+    public List<Item> findAll() {
+
         List<Item> result = new ArrayList<>(this.items);
         return result;
-    }
+
+}
 
  /*   /**
     * редактирование заявок

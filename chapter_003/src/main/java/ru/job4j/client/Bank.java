@@ -1,6 +1,7 @@
 package ru.job4j.client;
 
-import ru.job4j.client.User;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,46 +14,38 @@ public class Bank {
     public static void main(String[] args) {
 
 
-     /* User clients = new User();
-     System.out.println(clients.passport);
-     */
-        Map <User, List <Account>> accounts = new HashMap <>();
+
+        Map <User, List <Account>> money = new HashMap <>();
 
 
     }
 
-    List<String> client = new ArrayList <>();
+
 // Добвавление пользователя
     public void addUser(User user) {
 
-        for (String person : client){
-            client.add(person);
+       money.put(user, new ArrayList<Account>());
 
         }
 
-    }
+
 
 
     //  удаление пользователя
     public void deleteUser(User user) {
-        for (String person : client){
-            client.remove(person);
-
-        }
+        money.remove(user);
     }
 
     //добавить счёт пользователю
     public void addAccountToUser(String passport, Account account) {
-        Map <User, List <Account>> accounts = new HashMap <>();
-    for(key : accounts.put(passport, requisites)) {
-        accounts.put(accounts.put(client.), account.requisites);
-
-    }
-
-
 
 
     }
+
+
+
+
+
 
     // удалить один счёт пользователя
     public void deleteAccountFromUser(String passport, Account account) {}

@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import ru.job4j.start.Input;
 
+import java.util.List;
+
 
 public class ShowItems extends BaseAction {
     private String nm;
@@ -20,7 +22,7 @@ public class ShowItems extends BaseAction {
     @Override
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Show all items --------------");
-        Item[] items = tracker.findAll();
+        List<Item> items = tracker.findAll();
         for (Item item :items) {
             System.out.println(item);
         }
