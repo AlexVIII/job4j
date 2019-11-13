@@ -18,13 +18,13 @@ public class Bank {
 
         Map <User, List <Account>> money = new HashMap <>();
 
-
+        System.out.println(money.size());
     }
 
 
 // Добвавление пользователя
-    public void addUser(User user, HashMap<Object, Object> money) {
-        money.putIfAbsent(String name,String passport);
+    public void addUser(User user) {
+        money.put("1","2");
 
 
         }
@@ -33,10 +33,10 @@ public class Bank {
 
 
     //  удаление пользователя
-    public void deleteUser(User user) {
+  /*  public void deleteUser(User user) {
         money.remove(user);
     }
-
+*/
     //добавить счёт пользователю
     public void addAccountToUser(String passport, Account account) {
 
