@@ -3,13 +3,14 @@ package ru.job4j.client;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
 
 public class Bank {
+
+
 
     public static void main(String[] args) {
 
@@ -22,9 +23,9 @@ public class Bank {
 
 
 // Добвавление пользователя
-    public void addUser(User user) {
+    public void addUser(User user, HashMap<Object, Object> money) {
+        money.putIfAbsent(String name,String passport);
 
-       money.put(user, new ArrayList<Account>());
 
         }
 
