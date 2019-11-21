@@ -28,19 +28,12 @@ public class Bank {
 
     public void deleteAccountFromUser(String passport, Account account) {
     List<Account> accounts = users.get(getUserByPassport(passport));
+    accounts.remove(account);
     }
 
     public List<Account> getUserAccounts (String passport) {
+        List<Account> accounts = users.get(getUserByPassport(passport));
 
-
-
-      List<Account> sheet = null;
-
-    for (List<Account> find : users.values()){
-        for (Account u : find){
-            if (users.get(passport))
-        }
-    }
 
         return null;
     }
