@@ -33,6 +33,7 @@ public class Bank {
 
     public List<Account> getUserAccounts (String passport) {
         List<Account> accounts = users.get(getUserByPassport(passport));
+        accounts.contains(passport);
 
 
         return null;
