@@ -46,6 +46,13 @@ public class Bank {
     public boolean transferMoney (String srcPassport, String srcRequisite,
                                   String destPassport, String dstRequisite,
                                   double amount) {
+        boolean result;
+        double count;
+
+
+
+
+
         return false;
     }
 
