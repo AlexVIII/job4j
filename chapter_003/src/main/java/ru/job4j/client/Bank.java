@@ -1,74 +1,70 @@
 package ru.job4j.client;
 
 
+import java.util.*;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 
 
 public class Bank {
 
-    HashMap map;
-    User user;
-    public static void main(String[] args) {
-
-
-
-        Map <User, List <Account>> map = new HashMap <>();
-
-        System.out.println(map.size());
-    }
-
-
-// Добвавление пользователя
-
+    private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-
-     map.put(user, new ArrayList<Account>());
+        users.putIfAbsent(user, new LinkedList<>());
     }
 
-
-
-    //  удаление пользователя
     public void deleteUser(User user) {
-        map.remove(user);
+        users.remove(user);
+
     }
 
-    //добавить счёт пользователю
     public void addAccountToUser(String passport, Account account) {
-        List<Account> accounts = map.get(String passport);
-        accounts.add(account);
-
+        User user = getUserByPassport(passport);
+        if (user != null) {
+            users.get(user).add(account);
+        }
     }
 
-
-
-
-
-
-    // удалить один счёт пользователя
     public void deleteAccountFromUser(String passport, Account account) {
-        List<Account> accounts = map.get(String passport);
-        accounts.remove(passport);
+    List<Account> accounts = users.get(getUserByPassport(passport));
     }
 
-   // получить список счетов для пользователя
-   public List<Account> getUserAccounts (String passport) {
-        user = null;
-        User temp;
-        for (User temp : map.keySet()){
-            if (temp.getPassport().equals(passport)){
-                user = temp;
+    public List<Account> getUserAccounts (String passport) {
+
+
+
+      List<Account> sheet = null;
+
+    for (List<Account> find : users.values()){
+        for (Account u : find){
+            if (users.get(passport))
+        }
+    }
+
+        return null;
+    }
+
+
+
+
+
+    public boolean transferMoney (String srcPassport, String srcRequisite,
+                                  String destPassport, String dstRequisite,
+                                  double amount) {
+        return false;
+    }
+
+    private User getUserByPassport(String passport) {
+        User result = null;
+        for (User user : users.keySet()) {
+            if (user.getPassport().equals(passport)) {
+                result = user;
                 break;
             }
-
-
         }
-return user;
+        return result;
     }
+
 
 }
