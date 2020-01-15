@@ -1,29 +1,42 @@
 package ru.job4j.client;
 
+import java.util.Objects;
+
 public class Account {
-    Integer value;
-    String requisites;
+    private String requisite;
+    private double balance;
 
-    public Account(Integer value, String requisites) {
-        this.value =value;
-        this.requisites = requisites;
+    public Account(String requisite, double balance) {
+        this.requisite = requisite;
+        this.balance = balance;
     }
 
-    public Integer getValue() {
-        return value;
+    public String getRequisite() {
+        return requisite;
     }
 
-    public String getRequisites() {
-        return requisites;
-
+    public void setRequisite(String requisite) {
+        this.requisite = requisite;
     }
 
-    public void setRequisites(String requisites) {
-        this.requisites = requisites;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setValue(Integer value) {
-        this.value = value;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(requisite, account.requisite);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(requisite);
+    }
 }

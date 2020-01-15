@@ -1,42 +1,42 @@
 package ru.job4j.client;
 
+import java.util.Objects;
+
 public class User {
-    public String name;
-    public String passport ;
+    private String passport;
+    private String username;
 
-    public User(String name, String passport) {
-        this.name = name;
+    public User(String passport, String username) {
         this.passport = passport;
-    }
-
-    public User(String name){
-        this.name = name;
-
-    }
-
-    public String getName() {
-        return name;
+        this.username = username;
     }
 
     public String getPassport() {
         return passport;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setPassport(String passport) {
         this.passport = passport;
     }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    public User(){}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(passport, user.passport);
+    }
 
-        public void Hello (String name, String passport) {
-            System.out.println("Клиент " + name + " паспорт " + passport);
-        }
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(passport);
+    }
 }
-
