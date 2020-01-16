@@ -11,11 +11,14 @@ public class Bank {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        users.putIfAbsent(user, new LinkedList<>());
+        this.users.put(user, null);
+    }
+    public void addAccount(String passport, Account account) {
+
     }
 
     public void deleteUser(User user) {
-        users.remove(user);
+        this.users.remove(user);
 
     }
 
@@ -42,7 +45,6 @@ public class Bank {
 
 
 
-
     public boolean transferMoney (String srcPassport, String srcRequisite,
                                   String destPassport, String dstRequisite,
                                   double amount) {
@@ -56,6 +58,13 @@ public class Bank {
         return false;
     }
 
+    public Account findByRequisite(String passport, String requisite) {
+        return null;
+    }
+
+    public User findByPassport(String passport) {
+        return null;
+    }
     private User getUserByPassport(String passport) {
         User result = null;
         for (User user : users.keySet()) {
@@ -69,35 +78,5 @@ public class Bank {
 
 
 }
-/*
-package ru.job4j.bank;
 
-        import java.util.HashMap;
-        import java.util.List;
-        import java.util.Map;
 
-public class BankService {
-    private Map<User, List<Account>> users = new HashMap<>();
-
-    public void addUser(User user) {
-
-    }
-
-    public void addAccount(String passport, Account account) {
-
-    }
-
-    public User findByPassport(String passport) {
-        return null;
-    }
-
-    public Account findByRequisite(String passport, String requisite) {
-        return null;
-    }
-
-    public boolean transferMoney(String srcPassport, String srcRequisite,
-                                 String destPassport, String dеstRequisite, double amount) {
-        boolean rsl = false;
-        return rsl;
-    }
-}
