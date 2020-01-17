@@ -10,61 +10,80 @@ public class Bank {
 
     private Map<User, List<Account>> users = new HashMap<>();
 
+    /*Add User*/
     public void addUser(User user) {
         this.users.put(user, null);
     }
-    public void addAccount(String passport, Account account) {
+
+    /*Add account for User*/
+    public void addAccountToUser(String passport, Account account) {
+        this.users.get(this.findByPassport(passport)).add(account);
 
     }
 
+    /*Delete account from User*/
+    public void deleteAccountFromUser(String passport, Account account) {
+        this.users.get(this.findByPassport(passport)).remove(account);
+
+    }
+
+    /*Delete User*/
     public void deleteUser(User user) {
         this.users.remove(user);
 
     }
 
-    public void addAccountToUser(String passport, Account account) {
-        User user = getUserByPassport(passport);
-        if (user != null) {
-            users.get(user).add(account);
-        }
-    }
 
-    public void deleteAccountFromUser(String passport, Account account) {
-    List<Account> accounts = users.get(getUserByPassport(passport));
-    accounts.remove(account);
-    }
-
+    /*Get all users Accounts*/
     public List<Account> getUserAccounts (String passport) {
-        List<Account> accounts = users.get(getUserByPassport(passport));
-        accounts.contains(passport);
-
-
-        return null;
+       return this.users.get(this.findByPassport(passport));
     }
 
 
-
+    /*transfer money beetwen accounts*/
 
     public boolean transferMoney (String srcPassport, String srcRequisite,
-                                  String destPassport, String dstRequisite,
+                                  String dstPassport, String dstRequisite,
                                   double amount) {
-        boolean result;
-        double count;
-
-
-
-
-
-        return false;
+        boolean result = false;
+        Account src = this.findAccount(srcPassport, srcRequisite);
+        Account dst = this.findAccount(dstPassport, dstRequisite);
+        if (src != null && dst != null) {
+            src.subtractAndAddMoney(amount, dst);
+            result = true;
+        }
+        return result;
     }
 
+    /*Find requisite*/
     public Account findByRequisite(String passport, String requisite) {
-        return null;
+        Account result = null;
+        User user = this.findByPassport(passport);
+        if (user != null) {
+            int index = this.users.get(user).indexOf(new Account(requisite));
+            if (index > -1) {
+                result = this.users.get(user).get(index);
+            }
+        }
+        return result;
     }
+
+
+    /*Find passport*/
 
     public User findByPassport(String passport) {
-        return null;
+        User result = null;
+        for (User u : this.users.keySet()) {
+            if (u.getPassport().equals(passport)) {
+                result = u;
+                break;
+            }
+        }
+        return result;
     }
+
+
+    /*Get by Passport*/
     private User getUserByPassport(String passport) {
         User result = null;
         for (User user : users.keySet()) {
@@ -76,6 +95,19 @@ public class Bank {
         return result;
     }
 
+
+    /*Find Account*/
+    private Account findAccount(String passport, String requisites) {
+    Account result = null;
+    User user = this.findByPassport(passport);
+    if (user != null) {
+        int index = this.users.get(user).indexOf(new Account(requisites));
+        if (index > -1) {
+            result = this.users.get(user).get(index);
+        }
+    }
+    return result;
+}
 
 }
 

@@ -11,6 +11,10 @@ public class Account {
         this.balance = balance;
     }
 
+    public Account(String requisite) {
+        this.requisite = requisite;
+    }
+
     public String getRequisite() {
         return requisite;
     }
@@ -25,6 +29,16 @@ public class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public boolean subtractAndAddMoney(double amount, Account dest) {
+        boolean result = false;
+        if (this.getBalance() >= amount) {
+            this.balance -= amount;
+            dest.balance += amount;
+            result = true;
+        }
+        return result;
     }
 
     @Override
