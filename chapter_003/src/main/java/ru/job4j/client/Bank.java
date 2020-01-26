@@ -1,6 +1,7 @@
 package ru.job4j.client;
 
 
+
 import java.util.*;
 
 
@@ -17,15 +18,26 @@ public class Bank {
 
     /*Add account for User*/
     public void addAccountToUser(String passport, Account account) {
-        this.users.get(this.findByPassport(passport)).add(account);
-
+        for (User index : users.keySet()) {
+            if (index.getPassport().equals(passport)) {
+                this.users.get(index).add(account);
+            }
+        }
     }
+
+
 
     /*Delete account from User*/
     public void deleteAccountFromUser(String passport, Account account) {
-        this.users.get(this.findByPassport(passport)).remove(account);
 
+
+        for (User index : users.keySet()) {
+            if (index.getPassport().equals(passport)) {
+                this.users.get(index).remove(account);
+            }
+        }
     }
+
 
     /*Delete User*/
     public void deleteUser(User user) {
@@ -36,7 +48,14 @@ public class Bank {
 
     /*Get all users Accounts*/
     public List<Account> getUserAccounts (String passport) {
-       return this.users.get(this.findByPassport(passport));
+
+        List<Account> list = new ArrayList<>();
+        for (User key : users.keySet()) {
+            if (key.getPassport().equals(passport)) {
+                list = this.users.get(key);
+            }
+    }
+        return list;
     }
 
 
@@ -98,16 +117,16 @@ public class Bank {
 
     /*Find Account*/
     private Account findAccount(String passport, String requisites) {
-    Account result = null;
-    User user = this.findByPassport(passport);
-    if (user != null) {
-        int index = this.users.get(user).indexOf(new Account(requisites));
-        if (index > -1) {
-            result = this.users.get(user).get(index);
+        Account result = null;
+        User user = this.findByPassport(passport);
+        if (user != null) {
+            int index = this.users.get(user).indexOf(new Account(requisites));
+            if (index > -1) {
+                result = this.users.get(user).get(index);
+            }
         }
+        return result;
     }
-    return result;
-}
 
 }
 
